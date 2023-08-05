@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"name": "CoinSynch",
+			"path": "./"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			// Share etiding configurations like identation, end of line, charset and more
+			"editorconfig.editorconfig",
+			// Code linting
+			"dbaeumer.vscode-eslint",
+			// .env syntax support
+			"mikestead.dotenv"
+		]
+	},
+	"settings": {
+		// Enable formating when saving files
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+
+		// HTML auto formatting options
+		"html.format.maxPreserveNewLines": 1,
+		"html.format.wrapAttributes": "preserve"
+	}
+}
