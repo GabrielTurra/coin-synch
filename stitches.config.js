@@ -1,5 +1,5 @@
 import { createStitches, defaultThemeMap } from "@stitches/react";
-import { colors, fonts, fontSizes, fontWeights, radii, space, breakpoints  } from "@/src/styles/tokens";
+import { colors, fonts, fontSizes, fontWeights, radii, space, breakpoints, utils } from "@/src/styles/tokens";
 
 export const {
   styled,
@@ -15,6 +15,7 @@ export const {
     ...defaultThemeMap,
     height: "space",
     width: "space",
+    utils: "space",
   },
   theme: {
     colors: {
@@ -28,59 +29,9 @@ export const {
     fonts,
     fontSizes,
     fontWeights,
-    breakpoints,
     radii,
-    space,
-    utils: {
-      m: (value) => ({
-        margin: value,
-      }),
-      mt: (value) => ({
-        marginTop: value,
-      }),
-      mr: (value) => ({
-        marginRight: value,
-      }),
-      mb: (value) => ({
-        marginBottom: value,
-      }),
-      ml: (value) => ({
-        marginLeft: value,
-      }),
-      mx: (value) => ({
-        marginLeft: value,
-        marginRight: value,
-      }),
-      my: (value) => ({
-        marginTop: value,
-        marginBottom: value,
-      }),
-      p: (value) => ({
-        padding: value,
-      }),
-      pt: (value) => ({
-        paddingTop: value,
-      }),
-      pr: (value) => ({
-        paddingRight: value,
-      }),
-      pb: (value) => ({
-        paddingBottom: value,
-      }),
-      pl: (value) => ({
-        paddingLeft: value,
-      }),
-      px: (value) => ({
-        paddingLeft: value,
-        paddingRight: value,
-      }),
-      py: (value) => ({
-        paddingTop: value,
-        paddingBottom: value,
-      }),
-      br: (value) => ({
-        borderRadius: value,
-      }),
-    }
+    space
   },
+  media: breakpoints,
+  utils,
 });

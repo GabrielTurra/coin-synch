@@ -1,17 +1,18 @@
+import { HomeLayout } from "@/src/layouts/home";
+import { GetServerSideProps } from "next";
+
+export const getServerSideProps: GetServerSideProps<{
+  object: null
+}> = async () => {
+  return {
+    props: {
+      object: null
+    },
+  };
+};
+
 const Home = () => {
-  return (
-    <>
-      <h1>Desktop header!</h1>
-      <h2>Desktop header!</h2>
-      <h3>Desktop header!</h3>
-      <h4>Desktop header!</h4>
-      <h5>Desktop header!</h5>
-      <h6>Desktop header!</h6>
-      <p>Desktop text</p>
-      <label>Desktop label</label><br />
-      <small>Desktop small</small>
-    </>
-  );
+  return <HomeLayout />;
 };
 
 export default Home;
