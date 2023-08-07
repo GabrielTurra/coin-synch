@@ -62,8 +62,8 @@ export const Header:React.FC<HeaderProps> = () => {
                 "@lg": 5,
               }}>
                 <SignSection>
-                  <Button text="Sign up" color="white" />
-                  <Button text="Sign up" />
+                  <Button text="Sign up" size="small"  color="white" />
+                  <Button text="Sign up" size="small" />
                 </SignSection>
 
                 <CollapsibleMenuIcon 

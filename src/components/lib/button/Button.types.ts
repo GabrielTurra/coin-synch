@@ -1,7 +1,8 @@
-import { LinkProps } from "@/src/@types/LinkProps";
+import { StaticImageData } from "next/image";
 
 export interface ButtonProps {
     text: string;
-    link?: LinkProps; 
     color?: "white";
+    size?: "small" | "big";
+    icon?: StaticImageData;
 }

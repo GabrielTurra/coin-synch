@@ -1,15 +1,22 @@
 import { styled } from "@/stitches.config";
+import Image from "next/image";
+
+export const Icon = styled(Image, {
+  marginLeft: "$2",
+});
 
 export const ButtonComponent = styled("button", {
   all: "unset",
   
   background: "$primary",
   color: "white",
-  padding: "$2 $4",
+  padding: "$3 $6",
   borderRadius: "$xl",
   cursor: "pointer",
   transition: "all 0.2s ease",
-  fontSize: "$sm",
+  fontSize: "$md",
+  width: "128px",
+  textAlign: "center",
 
   "&:hover": {
     background: "$orange600",
@@ -25,6 +32,20 @@ export const ButtonComponent = styled("button", {
           background: "$gray300",
         }
       }
-    }
+    },
+    size: {
+      small: {
+        padding: "$2 $4",
+        fontSize: "$sm",
+        width: "auto"
+      },
+      big: {
+        padding: "$3 $6",
+        fontSize: "$sm",
+        width: "230px",
+        textTransform: "uppercase",
+        fontWeight: "bold"
+      },
+    },
   }
 });
