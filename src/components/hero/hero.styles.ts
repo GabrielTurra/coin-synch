@@ -1,29 +1,65 @@
 import { Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
+import { SwiperSlide } from "swiper/react";
 
 export const HeroComponent = styled("div", {
-  height: "70vh"
+  height: "60vh",
+
+  "@md": {
+    height: "65vh",
+  },
+});
+
+export const CustomSwiperSlide = styled(SwiperSlide, {
+  opacity: 0.5,
+
+  "&.swiper-slide-active": {
+    opacity: 1,
+  },
+
+  "@md": {
+    "img": {
+      width: "350px",
+      height: "350px",
+    }
+  },
+
+  "@lg": {
+    "img": {
+      width: "450px",
+      height: "450px",
+    }
+  },
+
+  "@xl": {
+    "img": {
+      width: "550px",
+      height: "550px",
+    }
+  },
 });
 
 export const HeroContainer = styled("div", {
-//   margin: "0 auto",
   padding: "0 $4",
   height: "100%",
+  maxWidth: "100%",
+  width: "272px",
+  margin: "0 auto",
 
-  marginLeft: "auto",
-  width: "calc(100vw - ((100vw - 272px) / 2))",
-    
   "@xs": { 
-    width: "calc(100vw - ((100vw - 460px) / 2))",
+    width: "460px",
   }, 
-    
+
   "@sm": { 
-    padding: "0",
-    width: "calc(100vw - ((100vw - 540px) / 2))",
+    width: "540px",
   }, 
   
-  "@md": { 
+  "@md": {
+    padding: "0",
+    margin: "0",
+    marginLeft: "auto", 
     width: "calc(100vw - ((100vw - 672px) / 2))",
+    maxWidth: "100%"
   }, 
     
   "@lg": {
@@ -45,11 +81,26 @@ export const Description = styled("p", {
 });
 
 export const HeroRow = styled(Row, {
-  alignItems: "center"
+  alignItems: "center",
+  textAlign: "center",
+  justifyContent: "space-between",
+  
+  "@md": {
+    textAlign: "start",
+  }, 
+  
+  "@xl": {
+    alignItems: "end",
+  }, 
 });
 
 export const TagsRow = styled(Row, {
-  marginTop: "50px"
+  marginTop: "50px",
+  justifyContent: "center",
+
+  "@md": {
+    justifyContent: "start",
+  }, 
 });
 
 export const Tag = styled("div", {

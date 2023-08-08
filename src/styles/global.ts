@@ -14,40 +14,75 @@ export const globalStyles = globalCss({
   },
 
   h1: {
-    fontSize: "$6xl",
-    lineHeight: "56px",
+    fontSize: "$5xl",
+    lineHeight: "120%",
     letterSpacing: "-1",
+
+    "@lg": {
+      fontSize: "$6xl",
+      lineHeight: "56px",
+    }, 
   },
 
   h2: {
-    fontSize: "$5xl",
-    lineHeight: "48px",
+    fontSize: "$4xl",
+    lineHeight: "120%",
     letterSpacing: "-1",
+
+    "@lg": {
+      fontSize: "$5xl",
+      lineHeight: "48px",
+    }, 
   },
   
   h3: {
-    fontSize: "$4xl",
+    fontSize: "$3xl",
     lineHeight: "40px",
+
+    "@lg": {
+      fontSize: "$4xl",
+      lineHeight: "120%",
+    }, 
   },
 
   h4: {
-    fontSize: "$2xl",
+    fontSize: "$1xl",
     lineHeight: "32px",
+
+    "@lg": {
+      fontSize: "$2xl",
+      lineHeight: "120%",
+    }, 
   },
 
   h5: {
-    fontSize: "$xl",
+    fontSize: "$lg",
     lineHeight: "24px",
+
+    "@lg": {
+      fontSize: "$xl",
+      lineHeight: "120%",
+    }, 
   },
 
   h6: {
-    fontSize: "$lg",
+    fontSize: "$md",
     lineHeight: "22px",
+
+    "@lg": {
+      fontSize: "$lg",
+      lineHeight: "120%",
+    }, 
   },
 
   "p, input, textarea": {
-    fontSize: "$md",
-    lineHeight: "24px",
+    fontSize: "$sm",
+    lineHeight: "160%",
+
+    "@md": {
+      fontSize: "$md",
+      lineHeight: "24px",
+    }, 
   },
 
   label: {

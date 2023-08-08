@@ -1,7 +1,7 @@
 export const breakpoints = {
-  xs: "(min-width: 320px)",
-  sm: "(min-width: 576px)",
-  md: "(min-width: 768px)",
-  lg: "(min-width: 992px)",
   xl: "(min-width: 1300px)",
+  lg: "(min-width: 992px)",
+  md: "(min-width: 768px)",
+  sm: "(min-width: 576px)",
+  xs: "(min-width: 320px)",
 };
