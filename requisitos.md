@@ -1,6 +1,6 @@
 #Landing page:
 [ ] Os dados das crypto moedas no topo da página deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
-[ ] O Banner do topo deverá ser em forma de carrossel (Mais detalhes no figma)
+[X] O Banner do topo deverá ser em forma de carrossel (Mais detalhes no figma)
 [ ] Os dados das crypto moedas na seção de "Top Cryptos" deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
 [ ] Ação do botão "View more +" deverá mostrar lista completa (10 itens);
 [ ] Após expandir a lista, o texto "View more +" deverá ser substituido por "View less";

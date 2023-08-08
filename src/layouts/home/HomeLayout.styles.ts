@@ -5,19 +5,9 @@ export const HomeComponent = styled(Page, {
   paddingTop: "95px"
 });
 
-export const WavyCurve = styled("div", {
+export const WavyCurve = styled("img", {
   position: "relative",
+  zIndex: "-9999",
   width: "100%",
-  display: "flex",
-
-  "img": {
-    top: "0px",
-    position: "absolute",
-    transform: "translateY(-50%)",
-    width: "100%",
-
-    "@md": {
-      top: "120px",
-    }
-  }
+  height: "auto",
 });

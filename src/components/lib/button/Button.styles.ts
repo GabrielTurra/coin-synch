@@ -19,7 +19,7 @@ export const ButtonComponent = styled("button", {
   textAlign: "center",
 
   "&:hover": {
-    background: "$orange600",
+    background: "$orange700",
   },
 
   variants: {

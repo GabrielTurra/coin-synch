@@ -47,7 +47,6 @@ export const HeroContainer = styled("div", {
   width: "100%",
   
   "@xs": { 
-    padding: "0",
     maxWidth: "460px", 
   }, 
 
@@ -110,7 +109,15 @@ export const Tag = styled("div", {
   background: "$orange100",
   padding: "$2 $4",
   fontSize: "$xl",
-  color: "$primary"
+  color: "$primary",
+  transition: "all 0.3s ease",
+  cursor: "pointer",
+  borderRadius: "$sm",
+
+  "&:hover": {
+    color: "$white",
+    background: "$orange500",
+  }
 });
 
 export const SliderCol = styled(Col, {

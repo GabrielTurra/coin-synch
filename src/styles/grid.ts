@@ -11,6 +11,7 @@ export const Container = styled("div", {
   }, 
 
   "@sm": { 
+    padding: "0",
     maxWidth: "540px",
   }, 
 

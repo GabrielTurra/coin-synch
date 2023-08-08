@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomSwiperSlide, Description, HeroComponent, HeroContainer, HeroRow, SliderCol, Tag, TagsRow, Title } from "./hero.styles";
-import { HeroProps } from "./hero.types";
+import { CustomSwiperSlide, Description, HeroComponent, HeroContainer, HeroRow, SliderCol, Tag, TagsRow, Title } from "./Hero.styles";
+import { HeroProps } from "./Hero.types";
 import { Button } from "../lib";
 import { Col } from "@/src/styles/grid";
 import { A11y } from "swiper/modules";
