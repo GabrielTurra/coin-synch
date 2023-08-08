@@ -21,9 +21,17 @@ export const Description = styled("p", {
 });
 
 export const SectionContainer = styled(Container, {
+  width: "95%",
+  maxWidth: "95%", 
+  padding: 0,
+  margin: 0,
+  marginLeft: "5%",
+
   "@sm": { 
-    width: "calc(100vw - ((100vw - 540px) / 2) + $2)",
-  }, 
+    margin: "0 auto",
+    padding: "0 $4",
+    maxWidth: "540px",
+  },
 
   "@md": { 
     maxWidth: "672px",
@@ -58,12 +66,22 @@ export const SectionRow = styled(Row, {
 export const CardsList = styled("div", {
   display: "grid",
   gap: "$4",
-  paddingRight: "20px",
 
   gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
   gridAutoColumns: "minmax(250px, 1fr)",
   gridAutoFlow: "column",
   overflowX: "auto",
+
+  "@sm": {
+    gridTemplateColumns: "1fr 1fr",
+    gridAutoColumns: "unset",
+    gridAutoFlow: "unset",
+    overflowX: "unset",
+  },
+
+  "@lg": {
+    paddingRight: "20px"
+  },
 
   "> div:nth-child(n+3)": {
     "@md": {

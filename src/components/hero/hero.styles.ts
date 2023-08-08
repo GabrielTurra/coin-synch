@@ -42,15 +42,12 @@ export const CustomSwiperSlide = styled(SwiperSlide, {
 export const HeroContainer = styled("div", {
   padding: "0 $4",
   height: "100%",
-  maxWidth: "272px",
   margin: "0 auto",
-  width: "100%",
+  width: "90%",
+  maxWidth: "90%", 
   
-  "@xs": { 
-    maxWidth: "460px", 
-  }, 
-
   "@sm": { 
+    width: "100%", 
     maxWidth: "540px",
   }, 
   
