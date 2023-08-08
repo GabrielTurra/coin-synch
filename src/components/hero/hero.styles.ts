@@ -1,9 +1,9 @@
-import { Row } from "@/src/styles/grid";
+import { Col, Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
 import { SwiperSlide } from "swiper/react";
 
 export const HeroComponent = styled("div", {
-  height: "60vh",
+  minHeight: "60vh",
 
   "@md": {
     height: "65vh",
@@ -42,16 +42,17 @@ export const CustomSwiperSlide = styled(SwiperSlide, {
 export const HeroContainer = styled("div", {
   padding: "0 $4",
   height: "100%",
-  maxWidth: "100%",
-  width: "272px",
+  maxWidth: "272px",
   margin: "0 auto",
-
+  width: "100%",
+  
   "@xs": { 
-    width: "460px",
+    padding: "0",
+    maxWidth: "460px", 
   }, 
 
   "@sm": { 
-    width: "540px",
+    maxWidth: "540px",
   }, 
   
   "@md": {
@@ -105,8 +106,17 @@ export const TagsRow = styled(Row, {
 
 export const Tag = styled("div", {
   marginRight: "10px",
+  marginBottom: "10px",
   background: "$orange100",
   padding: "$2 $4",
   fontSize: "$xl",
   color: "$primary"
+});
+
+export const SliderCol = styled(Col, {
+  display: "none",
+
+  "@md": {
+    display: "block"
+  }
 });

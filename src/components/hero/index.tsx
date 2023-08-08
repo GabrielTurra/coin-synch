@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomSwiperSlide, Description, HeroComponent, HeroContainer, HeroRow, Tag, TagsRow, Title } from "./hero.styles";
+import { CustomSwiperSlide, Description, HeroComponent, HeroContainer, HeroRow, SliderCol, Tag, TagsRow, Title } from "./hero.styles";
 import { HeroProps } from "./hero.types";
 import { Button } from "../lib";
 import { Col } from "@/src/styles/grid";
@@ -34,7 +34,7 @@ export const Hero:React.FC<HeroProps> = () => {
               <Tag>Games</Tag>
             </TagsRow>
           </Col>
-          <Col size={{
+          <SliderCol size={{
             "@initial": 0,
             "@md": 6,
             "@xl": 7,
@@ -68,7 +68,7 @@ export const Hero:React.FC<HeroProps> = () => {
                 </CustomSwiperSlide>
               ))}
             </Swiper>
-          </Col>
+          </SliderCol>
         </HeroRow>
       </HeroContainer>
     </HeroComponent>
