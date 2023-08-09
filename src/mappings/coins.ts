@@ -1,36 +1,26 @@
 import { CoinProps } from "../@types/Coins";
 
 export const formatCoins = (rawCoins: any): CoinProps[] => {
-  const formatedCoins = rawCoins.map((rawData: any) => (
-    {
-      name: rawData.name,
-      acronym: rawData.asset_id,
-      price_usd: rawData.price_usd,
-    } as CoinProps
-  ));
-
-  return formatedCoins;
-};
-
-export const appendCoinsImage = (rawCoins: any, coins: CoinProps[]): CoinProps[] => {
-  const formatedCoins = coins.map((coin) => {
-    const image = rawCoins.find((imageData: any) => imageData.asset_id === coin.acronym);
-
-    if(image){
-      coin.image = image.url;
-    }
-
+  const formatedCoins = rawCoins.data.map((coinInfo: any) => {
+    const coin = {
+      id: coinInfo.id,
+      name: coinInfo.name,
+      acronym: coinInfo.symbol,
+      price_usd: coinInfo.quote.USD.price,
+      variation: coinInfo.quote.USD.percent_change_24h,
+    } as CoinProps;
     return coin;
   });
 
   return formatedCoins;
 };
 
-export const appendCoinVariation = (rawVariation: any, coin: CoinProps): CoinProps => {
-  const variation = ((rawVariation.rate_open - rawVariation.rate_close) / rawVariation.rate_open) * 100;
+export const appendCoinsImage = (rawCoins: any, coins: CoinProps[]): CoinProps[] => {
+  const formatedCoins = coins.map((coin) => {
+    coin.image = rawCoins.data[coin.id].logo;
 
-  return {
-    ...coin,
-    variation 
-  } as CoinProps;
+    return coin;
+  });
+
+  return formatedCoins;
 };

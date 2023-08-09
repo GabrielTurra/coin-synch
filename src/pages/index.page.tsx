@@ -5,7 +5,8 @@ import { getCoinsData } from "../data/coins";
 export const getServerSideProps: GetServerSideProps<{
   object: null
 }> = async () => {
-  getCoinsData();
+  // const coins = await getCoinsData();
+  
   return {
     props: {
       object: null

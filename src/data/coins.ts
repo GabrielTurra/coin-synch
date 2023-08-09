@@ -1,46 +1,38 @@
 import { CoinProps } from "../@types/Coins";
-import { appendCoinVariation, appendCoinsImage, formatCoins } from "../mappings/coins";
+import { appendCoinsImage, formatCoins } from "../mappings/coins";
+
+const baseUrl = process.env.COIN_API_BASE_URL;
 
 const authHeaders = {
   headers: {
-    "X-CoinAPI-Key": `${process.env.COIN_API_KEY}`
+    "X-CMC_PRO_API_KEY": `${process.env.COIN_API_KEY}`
   }
 }
 
 export const getCoinsData = async (limit = 10) => {
-  const coinsWithoutImage = await getGeneralCoins(["BTC","ETH","DOG","ADA","SOL","USDC","USDT","BNB","XRP","LTC"]);
-  const coinsWithImage = await getCoinsImage(coinsWithoutImage);
-  const coinsData = await getCoinsVariation(coinsWithImage);
+  const coinsDataWithoutImage = await getGeneralCoins(limit);
+  const coinsDataWithImage = await getCoinsImage(coinsDataWithoutImage);
 
-  return coinsData;
+  return coinsDataWithImage;
 };
 
-const getGeneralCoins = async (coins_id: string[]): Promise<CoinProps[]> => {
-  const rawCoinsData = await fetch (`https://rest.coinapi.io/v1/assets/${coins_id}`, authHeaders)
-    .then((data) => data.json());
+const getGeneralCoins = async (limit: number): Promise<CoinProps[]> => {
+  const rawCoinsData = await fetch (
+    `${baseUrl}/v1/cryptocurrency/listings/latest?limit=${limit}`, 
+    authHeaders
+  ).then((data) => data.json());
 
   return formatCoins(rawCoinsData);
-}
+};
 
 const getCoinsImage = async (coins: CoinProps[]): Promise<CoinProps[]> => {
-  const rawImagesData = await fetch("https://rest.coinapi.io/v1/assets/icons/32", authHeaders)
-    .then((data) => data.json());
+  const rawImagesData = await fetch(
+    `${baseUrl}/v2/cryptocurrency/info?id=${coins.map(coin => coin.id)}`, 
+    authHeaders
+  ).then((data) => data.json());
 
   return appendCoinsImage(rawImagesData, coins);
-}
-
-const getCoinsVariation = async (coins: CoinProps[]): Promise<CoinProps[]> => {
-  const coinsWithVariation = await Promise.all(coins.map(async (coin) => {
-    const rawVariationData = await fetch(
-      `https://rest.coinapi.io/v1/exchangerate/${coin.acronym}/USD/history?period_id=1DAY&limit=1`, 
-      authHeaders
-      ).then((data) => data.json());
-      
-    return appendCoinVariation(rawVariationData[0], coin);
-  }));
-
-  return coinsWithVariation;
-}
+};
 
 
 
