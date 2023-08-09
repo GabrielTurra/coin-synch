@@ -18,8 +18,8 @@ export const CoinsProvider: React.FC<CoinsProviderProps> = ({ children }) => {
       acronym: '',
       id: 0,
       name: '',
-      price_usd: 0,
-      variation: 0
+      price_usd: '',
+      variation: '',
     },
   ]);
 

@@ -18,8 +18,11 @@ import BarsIcon from "@/public/icons/bars.svg";
 import LogoImage from "@/public/logo-coin-synch.png";
 import Link from "next/link";
 import * as Dialog from "../modal";
+import { useCoins } from "@/src/hooks/CoinsProvider";
 
 export const Header: React.FC<HeaderProps> = () => {
+  const controlCoins = useCoins();
+
   return (
     <HeaderComponent>
       <HeaderContainer>
@@ -61,7 +64,7 @@ export const Header: React.FC<HeaderProps> = () => {
                   "@lg": 7,
                 }}
               >
-                <HorizontalScrollList />
+                <HorizontalScrollList coins={controlCoins.getCoins()} />
               </SignHorizontalCol>
 
               <Col

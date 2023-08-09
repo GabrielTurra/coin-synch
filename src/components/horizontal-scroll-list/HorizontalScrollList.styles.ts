@@ -7,10 +7,8 @@ const scrollText = keyframes({
 });
 
 export const HorizontalScrollListComponent = styled("div", {
-
-  
   ".content": {
-    margin: "0 10px",
+    margin: "0 15px",
     fontSize: "$sm",
   },
   
@@ -50,5 +48,5 @@ export const ListContainer = styled(Container, {
 });
 
 export const HorizontalContent = styled("div", {
-  animation: `${scrollText} 30s linear infinite`, 
+  animation: `${scrollText} 40s linear infinite`, 
 });

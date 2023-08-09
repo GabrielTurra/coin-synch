@@ -6,8 +6,8 @@ export const formatCoins = (rawCoins: any): CoinProps[] => {
       id: coinInfo.id,
       name: coinInfo.name,
       acronym: coinInfo.symbol,
-      price_usd: coinInfo.quote.USD.price,
-      variation: coinInfo.quote.USD.percent_change_24h,
+      price_usd: coinInfo.quote.USD.price.toFixed(2).replace('.', ','),
+      variation: coinInfo.quote.USD.percent_change_24h.toFixed(2),
     } as CoinProps;
     return coin;
   });
