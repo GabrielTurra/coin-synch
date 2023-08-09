@@ -31,13 +31,22 @@ export const ButtonComponent = styled("button", {
         "&:hover": {
           background: "$gray300",
         }
-      }
+      },
+      green: {
+        background: "$green700",
+        color: "$white",
+
+        "&:hover": {
+          background: "$green900",
+        }
+      },
     },
     size: {
       small: {
         padding: "$2 $4",
         fontSize: "$sm",
-        width: "auto"
+        width: "auto",
+        minWidth: "50px",
       },
       big: {
         padding: "$3 $6",

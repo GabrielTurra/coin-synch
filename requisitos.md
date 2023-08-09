@@ -1,5 +1,5 @@
 #Landing page:
-[ ] Os dados das crypto moedas no topo da página deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
+[X] Os dados das crypto moedas no topo da página deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
 [X] O Banner do topo deverá ser em forma de carrossel (Mais detalhes no figma)
 [ ] Os dados das crypto moedas na seção de "Top Cryptos" deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
 [ ] Ação do botão "View more +" deverá mostrar lista completa (10 itens);
@@ -8,7 +8,7 @@
 [ ] Implementar ação de "Loading" desabilitando o botão de "Subscribe" até o retorno do servidor;
 [ ] Enquanto a ação de subscribe estiver sendo processada o usuário não poderá alterar o campo e-mail (desabilitar o preenchimento do input de texto);
 [ ] Após retorno de sucesso do servidor, o campo e-mail deve ser limpo e o botão "Subscribe" deve estar disponível novamente;
-[ ] O botão "Sign in" deverá abrir um dialog conforme o layout;
+[X] O botão "Sign in" deverá abrir um dialog conforme o layout;
 [ ] O input de e-mail deverá ser validado (e-mail válido)
 [ ] O input de password deverá ter a ação de mostrar / esconder a senha (clicando no ícone de olho);
 [ ] "Forgot password?" não deverá ser implementado (apenas um link fake);

@@ -4,6 +4,7 @@ import { Hero } from "@/src/components/hero";
 
 import CurveImage from "@/public/curves/hero-curve.svg";
 import { CardsSection } from "@/src/components/cards-section";
+import { TopCryptosSection } from "@/src/components/top-cryptos-section";
 
 export const HomeLayout: React.FC<HomeLayoutProps> = () => {
   return (
@@ -11,6 +12,7 @@ export const HomeLayout: React.FC<HomeLayoutProps> = () => {
       <Hero />
       <WavyCurve src={CurveImage.src} alt="" />
       <CardsSection />
+      <TopCryptosSection />
     </HomeComponent>
   );
 };

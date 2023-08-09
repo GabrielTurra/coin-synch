@@ -5,6 +5,9 @@ const nextConfig = {
     "api.ts",
     "api.tsx",
   ],
+  images: {
+		domains: ['s2.coinmarketcap.com'],
+	},
 };
 
 module.exports = nextConfig;

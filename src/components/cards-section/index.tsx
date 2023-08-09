@@ -48,7 +48,7 @@ export const CardsSection:React.FC<CardsSectionProps> = () => {
             "@lg": 7,
           }}>
             <CardsList>
-              {mockedCards.map((item) => (<Card {...item} key=""/>))}
+              {mockedCards.map((item, index) => (<Card {...item} key={index} />))}
             </CardsList>
           </Col>
           <Col className="col-text" size={{

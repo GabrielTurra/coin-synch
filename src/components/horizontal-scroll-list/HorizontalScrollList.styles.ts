@@ -6,6 +6,10 @@ const scrollText = keyframes({
   "100%": { transform: "translate3d(-100%, 0, 0)" },
 });
 
+export const HorizontalContent = styled("div", {
+  animation: `${scrollText} 40s linear infinite`, 
+});
+
 export const HorizontalScrollListComponent = styled("div", {
   ".content": {
     margin: "0 15px",
@@ -31,6 +35,10 @@ export const HorizontalScrollListComponent = styled("div", {
   ".value": {
     margin: "0 $2"
   },
+
+  [`&:hover ${HorizontalContent}`]: {
+    animationPlayState: "paused",
+  },
 });
 
 export const ListContainer = styled(Container, {
@@ -47,6 +55,3 @@ export const ListContainer = styled(Container, {
   } 
 });
 
-export const HorizontalContent = styled("div", {
-  animation: `${scrollText} 40s linear infinite`, 
-});

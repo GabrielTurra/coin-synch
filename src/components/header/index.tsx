@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = () => {
                   "@lg": 7,
                 }}
               >
-                <HorizontalScrollList coins={controlCoins.getCoins()} />
+                <HorizontalScrollList coins={controlCoins.getCoins(4)} />
               </SignHorizontalCol>
 
               <Col

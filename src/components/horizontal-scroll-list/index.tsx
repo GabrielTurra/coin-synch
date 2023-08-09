@@ -8,8 +8,8 @@ export const HorizontalScrollList:React.FC<HorizontalScrollListProps> = ({ coins
     <HorizontalScrollListComponent>
       <ListContainer>
         <HorizontalContent>
-          {coins.map((item: CoinProps) => (
-            <span className="content" key="">
+          {coins.map((item: CoinProps, index) => (
+            <span className="content" key={index}>
               <span className="title">{item.acronym}</span>
               <span className="value">${item.price_usd}</span>     
               {Number(item.variation) > 0 
@@ -20,8 +20,8 @@ export const HorizontalScrollList:React.FC<HorizontalScrollListProps> = ({ coins
           ))}
         </HorizontalContent>
         <HorizontalContent>
-          {coins.map((item: CoinProps) => (
-            <span className="content" key="">
+          {coins.map((item: CoinProps, index) => (
+            <span className="content" key={index}>
               <span className="title">{item.acronym}</span>
               <span className="value">{item.price_usd}</span>     
               {Number(item.variation)
