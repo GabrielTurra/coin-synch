@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ShowMore, TopCryptosSectionComponent } from "./TopCryptosSection.styles";
 import { TopCryptosSectionProps } from "./TopCryptosSection.types";
-import { CryptosTable } from "../crypto-table";
 import { useCoins } from "@/src/hooks/CoinsProvider";
 import { Container } from "@/src/styles/grid";
 import { CoinProps } from "@/src/@types/Coins";
+import { AccordionCryptos } from "../accordion-cryptos";
+import { CryptosTable } from "../crypto-table";
 
 export const TopCryptosSection:React.FC<TopCryptosSectionProps> = () => {
   const controlCoins = useCoins();
@@ -39,12 +40,15 @@ export const TopCryptosSection:React.FC<TopCryptosSectionProps> = () => {
 
       <Container>
         <CryptosTable coins={coins} />
+        <AccordionCryptos coins={coins} />
+
         <ShowMore 
           onClick={() => toggleShowView()}
         >
           {isShowingAll ? "View Less -" : "View More +"}
         </ShowMore>
       </Container>
+
     </TopCryptosSectionComponent>
   );
 };

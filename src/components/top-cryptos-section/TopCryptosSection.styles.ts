@@ -1,4 +1,6 @@
 import { styled } from "@/stitches.config";
+import { CryptosTableComponent } from "../crypto-table/CryptosTable.styles";
+import { AccordionCryptosComponent } from "../accordion-cryptos/AccordionCryptos.styles";
 
 export const TopCryptosSectionComponent = styled("div", {  
   textAlign: "center",
@@ -6,7 +8,23 @@ export const TopCryptosSectionComponent = styled("div", {
 
   h2: {
     marginBottom: "$10",
-  }
+  },  
+
+  [`${CryptosTableComponent}`]: {
+    display: "none",
+
+    "@md": {
+      display: "table",
+    }
+  },
+
+  [`${AccordionCryptosComponent}`]: {
+    display: "block",
+
+    "@md": {
+      display: "none",
+    }
+  },
 });
 
 export const ShowMore = styled("span", {

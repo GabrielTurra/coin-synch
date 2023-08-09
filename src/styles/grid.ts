@@ -6,11 +6,6 @@ export const Container = styled("div", {
   height: "100%",
   width: "90%",
   maxWidth: "90%", 
-  
-  "@xs": { 
-    width: "100%",
-    maxWidth: "460px",
-  }, 
 
   "@sm": { 
     padding: "0",
