@@ -13,7 +13,7 @@ export const HeaderComponent = styled("div", {
 
   borderBottom: "1px solid $gray200",
 
-  zIndex: "9999",
+  zIndex: "9",
 
   "@lg": {
     borderBottom: "none",

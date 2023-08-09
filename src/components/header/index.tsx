@@ -1,39 +1,42 @@
 import { Col } from "@/src/styles/grid";
+import { HorizontalScrollList } from "../horizontal-scroll-list";
 import { Button } from "../lib";
 import {
-  HeaderContainer, 
-  HeaderComponent, 
-  HeaderLogo, 
-  Navigation, 
-  SignSection, 
-  HeaderRow, 
-  SignRow, 
+  CollapsibleMenuIcon,
+  HeaderComponent,
+  HeaderContainer,
+  HeaderLogo,
+  HeaderRow,
+  Navigation,
   SignHorizontalCol,
-  CollapsibleMenuIcon
+  SignRow,
+  SignSection,
 } from "./Header.styles";
 import { HeaderProps } from "./Header.types";
-import { HorizontalScrollList } from "../horizontal-scroll-list";
 
-import LogoImage from "@/public/logo-coin-synch.png";
 import BarsIcon from "@/public/icons/bars.svg";
+import LogoImage from "@/public/logo-coin-synch.png";
 import Link from "next/link";
+import * as Dialog from "../modal";
 
-export const Header:React.FC<HeaderProps> = () => {
+export const Header: React.FC<HeaderProps> = () => {
   return (
     <HeaderComponent>
       <HeaderContainer>
         <HeaderRow>
-          <Col size={{
-            "@initial": 8,
-            "@lg": 6,
-          }}>
+          <Col
+            size={{
+              "@initial": 8,
+              "@lg": 6,
+            }}
+          >
             <HeaderRow>
               <Link href="/">
-                <HeaderLogo 
+                <HeaderLogo
                   quality={100}
-                  src={LogoImage.src}  
-                  width={LogoImage.width} 
-                  height={LogoImage.height} 
+                  src={LogoImage.src}
+                  width={LogoImage.width}
+                  height={LogoImage.height}
                   alt="Coin Synch Image Logo"
                   priority
                 />
@@ -45,28 +48,97 @@ export const Header:React.FC<HeaderProps> = () => {
               </Navigation>
             </HeaderRow>
           </Col>
-          <Col size={{
-            "@initial": 4,
-            "@lg": 6,
-          }}>
+          <Col
+            size={{
+              "@initial": 4,
+              "@lg": 6,
+            }}
+          >
             <SignRow>
-              <SignHorizontalCol size={{
-                "@initial": 0,
-                "@lg": 7,
-              }}>
+              <SignHorizontalCol
+                size={{
+                  "@initial": 0,
+                  "@lg": 7,
+                }}
+              >
                 <HorizontalScrollList />
               </SignHorizontalCol>
 
-              <Col size={{
-                "@initial": 12,
-                "@lg": 5,
-              }}>
+              <Col
+                size={{
+                  "@initial": 12,
+                  "@lg": 5,
+                }}
+              >
                 <SignSection>
-                  <Button text="Sign up" size="small"  color="white" />
-                  <Button text="Sign up" size="small" />
+                  <Dialog.Root>
+                    <Dialog.Trigger asChild>
+                      <Button text="Sign in" size="small" color="white" />
+                    </Dialog.Trigger>
+
+                    <Dialog.Content>
+                      <Dialog.Title className="DialogTitle">
+                        AO ENTRAR
+                      </Dialog.Title>
+
+                      <fieldset className="Fieldset">
+                        <label className="Label" htmlFor="name">
+                          Name
+                        </label>
+                        <input
+                          className="Input"
+                          id="name"
+                          defaultValue="Gabriel Turra"
+                        />
+                      </fieldset>
+                      <fieldset className="Fieldset">
+                        <label className="Label" htmlFor="username">
+                          Username
+                        </label>
+                        <input
+                          className="Input"
+                          id="username"
+                          defaultValue="@gabrielturra"
+                        />
+                      </fieldset>
+                    </Dialog.Content>
+                  </Dialog.Root>
+
+                  <Dialog.Root>
+                    <Dialog.Trigger asChild>
+                      <Button text="Sign up" size="small" />
+                    </Dialog.Trigger>
+
+                    <Dialog.Content>
+                      <Dialog.Title className="DialogTitle">
+                        AO CADASTRAR
+                      </Dialog.Title>
+
+                      <fieldset className="Fieldset">
+                        <label className="Label" htmlFor="name">
+                          Name
+                        </label>
+                        <input
+                          className="Input"
+                          id="name"
+                          defaultValue="Gabriel Turra"
+                        />
+                      </fieldset>
+                      <fieldset className="Fieldset">
+                        <label className="Label" htmlFor="username">
+                          Username
+                        </label>
+                        <input
+                          className="Input"
+                          id="username"
+                          defaultValue="@gabrielturra"
+                        />
+                      </fieldset>
+                    </Dialog.Content>
+                  </Dialog.Root>
                 </SignSection>
 
-                <CollapsibleMenuIcon 
+                <CollapsibleMenuIcon
                   src={BarsIcon.src}
                   width={24}
                   height={24}

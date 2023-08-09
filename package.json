@@ -22,6 +22,7 @@
     "prettier-eslint": "^11.0.0"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.4",
     "@stitches/react": "^1.2.8",
     "next": "13.4.12",
     "react": "18.2.0",
