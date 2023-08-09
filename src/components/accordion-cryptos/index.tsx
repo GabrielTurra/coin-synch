@@ -5,7 +5,7 @@ import { AccordionCryptosProps } from "./AccordionCryptos.types";
 import Image from "next/image";
 
 import ChevronDown from '@/public/icons/chevron-down.svg';
-import { Col, Container, Row } from "@/src/styles/grid";
+import { Container } from "@/src/styles/grid";
 
 export const AccordionCryptos:React.FC<AccordionCryptosProps> = ({ coins }) => {
   return (
@@ -43,7 +43,7 @@ export const AccordionCryptos:React.FC<AccordionCryptosProps> = ({ coins }) => {
               <Container>
                 <ContentItem>
                   <p>Price</p>
-                  US$ {coin.price_usd}
+                  US {coin.price_usd}
                 </ContentItem>
                 <ContentItem>
                   <p>Change</p>

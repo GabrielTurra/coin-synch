@@ -32,7 +32,7 @@ export const CryptosTable:React.FC<CryptosTableProps> = ({ coins }) => {
                 <span>{coin.acronym}</span>
               </div>
             </td>
-            <td>US$ {coin.price_usd}</td>
+            <td>US {coin.price_usd}</td>
             {Number(coin.variation) > 0 
               ? <td className="positive">+{coin.variation}%</td>
               : <td className="negative">{coin.variation}%</td>

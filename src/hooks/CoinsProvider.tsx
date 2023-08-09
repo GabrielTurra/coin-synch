@@ -30,7 +30,6 @@ export const CoinsProvider: React.FC<CoinsProviderProps> = ({ children }) => {
 
   const getCoins = useCallback((quantity: number) => {
     if(quantity) return coins.slice(0, quantity);
-
     return coins;
   }, [coins]);
 

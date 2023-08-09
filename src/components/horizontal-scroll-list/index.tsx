@@ -11,7 +11,7 @@ export const HorizontalScrollList:React.FC<HorizontalScrollListProps> = ({ coins
           {coins.map((item: CoinProps, index) => (
             <span className="content" key={index}>
               <span className="title">{item.acronym}</span>
-              <span className="value">${item.price_usd}</span>     
+              <span className="value">{item.price_usd}</span>     
               {Number(item.variation) > 0 
                 ? (<span className="positive_variation">+{item.variation}</span>)
                 : (<span className="negative_variation">{item.variation}</span>)
