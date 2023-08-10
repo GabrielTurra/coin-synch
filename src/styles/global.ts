@@ -46,33 +46,18 @@ export const globalStyles = globalCss({
   },
 
   h4: {
-    fontSize: "$1xl",
-    lineHeight: "32px",
-
-    "@lg": {
-      fontSize: "$2xl",
-      lineHeight: "120%",
-    }, 
+    fontSize: "$2xl",
+    lineHeight: "120%",
   },
 
   h5: {
-    fontSize: "$lg",
-    lineHeight: "24px",
-
-    "@lg": {
-      fontSize: "$xl",
-      lineHeight: "120%",
-    }, 
+    fontSize: "$xl",
+    lineHeight: "120%",
   },
 
   h6: {
-    fontSize: "$md",
-    lineHeight: "22px",
-
-    "@lg": {
-      fontSize: "$lg",
-      lineHeight: "120%",
-    }, 
+    fontSize: "$lg",
+    lineHeight: "120%",
   },
 
   "p, input, textarea": {

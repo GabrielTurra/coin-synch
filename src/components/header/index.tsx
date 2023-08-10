@@ -1,6 +1,22 @@
-import { Col } from "@/src/styles/grid";
-import { HorizontalScrollList } from "../horizontal-scroll-list";
+// External Dependencies
+import React, { useState } from "react";
+import Link from "next/link";
+
+// Internal Dependencies
 import { Button } from "../lib";
+import * as Modal from "../modal";
+import { Col } from "@/src/styles/grid";
+import { HeaderProps } from "./Header.types";
+import { HorizontalScrollList } from "../horizontal-scroll-list";
+
+// Images
+import BarsIcon from "@/public/icons/bars.svg";
+import LogoImage from "@/public/logo-coin-synch.png";
+
+// Providers
+import { useCoins } from "@/src/hooks/CoinsProvider";
+
+// Styles
 import {
   CollapsibleMenuIcon,
   HeaderComponent,
@@ -12,13 +28,8 @@ import {
   SignRow,
   SignSection,
 } from "./Header.styles";
-import { HeaderProps } from "./Header.types";
-
-import BarsIcon from "@/public/icons/bars.svg";
-import LogoImage from "@/public/logo-coin-synch.png";
-import Link from "next/link";
-import * as Dialog from "../modal";
-import { useCoins } from "@/src/hooks/CoinsProvider";
+import { SignInForm } from "../sign-in-form";
+import { SignUpForm } from "../sign-up-form";
 
 export const Header: React.FC<HeaderProps> = () => {
   const controlCoins = useCoins();
@@ -74,71 +85,29 @@ export const Header: React.FC<HeaderProps> = () => {
                 }}
               >
                 <SignSection>
-                  <Dialog.Root>
-                    <Dialog.Trigger asChild>
-                      <Button text="Sign in" sizeWidth="small" color="white" />
-                    </Dialog.Trigger>
-
-                    <Dialog.Content>
-                      <Dialog.Title className="DialogTitle">
-                        AO ENTRAR
-                      </Dialog.Title>
-
-                      <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="name">
-                          Name
-                        </label>
-                        <input
-                          className="Input"
-                          id="name"
-                          defaultValue="Gabriel Turra"
-                        />
-                      </fieldset>
-                      <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="username">
-                          Username
-                        </label>
-                        <input
-                          className="Input"
-                          id="username"
-                          defaultValue="@gabrielturra"
-                        />
-                      </fieldset>
-                    </Dialog.Content>
-                  </Dialog.Root>
-
-                  <Dialog.Root>
-                    <Dialog.Trigger asChild>
-                      <Button text="Sign up" sizeWidth="small" />
-                    </Dialog.Trigger>
-
-                    <Dialog.Content>
-                      <Dialog.Title className="DialogTitle">
-                        AO CADASTRAR
-                      </Dialog.Title>
-
-                      <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="name">
-                          Name
-                        </label>
-                        <input
-                          className="Input"
-                          id="name"
-                          defaultValue="Gabriel Turra"
-                        />
-                      </fieldset>
-                      <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="username">
-                          Username
-                        </label>
-                        <input
-                          className="Input"
-                          id="username"
-                          defaultValue="@gabrielturra"
-                        />
-                      </fieldset>
-                    </Dialog.Content>
-                  </Dialog.Root>
+                  <Modal.Root>
+                    <Modal.Trigger asChild>
+                      <Button 
+                        text="Sign in" 
+                        sizeWidth="small" 
+                        color="white"
+                      />
+                    </Modal.Trigger>
+                    <Modal.Content>
+                      <SignInForm />
+                    </Modal.Content>
+                  </Modal.Root>
+                  <Modal.Root>
+                    <Modal.Trigger asChild>
+                      <Button 
+                        text="Sign up" 
+                        sizeWidth="small" 
+                      />
+                    </Modal.Trigger>
+                    <Modal.Content>
+                      <SignUpForm />
+                    </Modal.Content>
+                  </Modal.Root>
                 </SignSection>
 
                 <CollapsibleMenuIcon

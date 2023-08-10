@@ -1,6 +1,7 @@
 # Landing page:
 [X] Os dados das crypto moedas no topo da página deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
 [X] O Banner do topo deverá ser em forma de carrossel (Mais detalhes no figma)
+[ ] O Banner do topo deverá mudar a imagem quando o usuario descer a página
 
 ## Top Cryptos
 [X] Os dados das crypto moedas na seção de "Top Cryptos" deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
@@ -11,18 +12,18 @@
 [X] O formulário de Newsletter no rodapé da página deverá ter interação a API Rest
 [X] Implementar ação de "Loading" desabilitando o botão de "Subscribe" até o retorno do servidor;
 [X] Enquanto a ação de subscribe estiver sendo processada o usuário não poderá alterar o campo e-mail (desabilitar o preenchimento do input de texto);
-[ ] Após retorno de sucesso do servidor, o campo e-mail deve ser limpo e o botão "Subscribe" deve estar disponível novamente;
+[X] Após retorno de sucesso do servidor, o campo e-mail deve ser limpo e o botão "Subscribe" deve estar disponível novamente;
 
 ## Sign
 [X] O botão "Sign in" deverá abrir um dialog conforme o layout;
-[ ] O input de e-mail deverá ser validado (e-mail válido)
-[ ] O input de password deverá ter a ação de mostrar / esconder a senha (clicando no ícone de olho);
-[ ] "Forgot password?" não deverá ser implementado (apenas um link fake);
-[ ] O botão de "Sign Up" e o link "Don’t have an account? Sign up to CoinSynch" deverão abrir o dialog "Sign Up" conforme o figma;
-[ ] Os campos "Name", "Email", "Password", "Confirm Password" e o checkbox "I have read and accept the Privacy Policy and Terms of User Sign up." deverão ser obrigatórios;
-[ ] O input de e-mail deverá ser validado (e-mail válido)
-[ ] Os inputs Passwords e Confirm Password deverão ser iguais para se tornarem válidos;
-[ ] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
+[X] O input de e-mail deverá ser validado (e-mail válido)
+[X] O input de password deverá ter a ação de mostrar / esconder a senha (clicando no ícone de olho);
+[X] "Forgot password?" não deverá ser implementado (apenas um link fake);
+[X] O botão de "Sign Up" e o link "Don’t have an account? Sign up to CoinSynch" deverão abrir o dialog "Sign Up" conforme o figma;
+[X] Os campos "Name", "Email", "Password", "Confirm Password" e o checkbox "I have read and accept the Privacy Policy and Terms of User Sign up." deverão ser obrigatórios;
+[X] O input de e-mail deverá ser validado (e-mail válido)
+[X] Os inputs Passwords e Confirm Password deverão ser iguais para se tornarem válidos;
+[-] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
 
 #Dashboard:
 [ ] O topo da página deverá ter as informações do usuário (Avatar e Nome, esses dados deverão ser consumidos da API Rest)

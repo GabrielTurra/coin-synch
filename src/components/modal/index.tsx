@@ -6,17 +6,20 @@ import * as ModalBase from "./Modal.styles";
 import { DialogContentProps } from "./Modal.types";
 
 export const Content = React.forwardRef<HTMLDivElement, DialogContentProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <DialogPrimitive.Portal>
-      <ModalBase.Overlay />
-      <ModalBase.Content {...props} ref={forwardedRef}>
-        {children}
-        <ModalBase.Close aria-label="Close">
-          <Image src={CloseIcon.src} width={16} height={16} alt="Close modal" />
-        </ModalBase.Close>
-      </ModalBase.Content>
-    </DialogPrimitive.Portal>
-  )
+  ({ children, ...props }, forwardedRef) => {
+    
+    return (
+      <DialogPrimitive.Portal>
+        <ModalBase.Overlay />
+        <ModalBase.Content {...props} ref={forwardedRef}>
+          {children}
+          <ModalBase.Close aria-label="Close">
+            <Image src={CloseIcon.src} width={16} height={16} alt="Close modal" />
+          </ModalBase.Close>
+        </ModalBase.Content>
+      </DialogPrimitive.Portal>
+    )
+  }
 );
 
 Content.displayName = "DialogContent";

@@ -9,8 +9,11 @@ export const TextInputComponent = styled("div", {
   }
 });
 
-export const LabelError = styled("p", {
-  color: "$red500"
+export const Error = styled("label", {
+  height: "5px",
+  marginTop: "2px",
+  color: "$red300 !important",
+  fontSize: "$xs !important",
 });
 
 export const InputContainer = styled("div", {
@@ -19,8 +22,15 @@ export const InputContainer = styled("div", {
   maxWidth: "100%",
   borderRadius: '$sm',
   boxSizing: "border-box",
-  border: "3px solid $white",
+  border: "1px solid $gray300",
   transition: "all 0.2s ease",
+  display: "grid",
+  gridTemplateColumns: "1fr",
+  alignItems: "center",
+
+  "&:has(.icon)": {
+    gridTemplateColumns: "30px auto",
+  },
 
   "&:has(input:focus)": {
     borderColor: "$orange500"
@@ -29,6 +39,14 @@ export const InputContainer = styled("div", {
   "&:has(input:disabled)": {
     opacity: 0.7,
     cursor: "not-allowed"
+  },
+
+  "&:has(.type-selector)": {
+    gridTemplateColumns: "auto 30px",
+
+    "&:has(.icon)": {
+      gridTemplateColumns: "30px auto 30px",
+    },
   },
   
   input: {
@@ -44,6 +62,10 @@ export const InputContainer = styled("div", {
     "&:disabled": {
       cursor: "not-allowed"
     },
+  },
+
+  ".type-selector": {
+    cursor: "pointer",
   },
 
   variants: {

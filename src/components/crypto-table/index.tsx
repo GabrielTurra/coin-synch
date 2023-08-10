@@ -19,7 +19,7 @@ export const CryptosTable:React.FC<CryptosTableProps> = ({ coins }) => {
       <tbody>
         {coins.map((coin, index) => (
           <tr key={index}>
-            <td>{index < 9 ? 0 + `${index + 1}`: index + 1 }</td>
+            <td>{String(index + 1).padStart(2, '0')}</td>
             <td>
               <div>
                 <Image 

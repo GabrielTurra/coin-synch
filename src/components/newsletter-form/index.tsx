@@ -9,7 +9,7 @@ import { api } from "@/src/lib/axios";
 import { AxiosError } from "axios";
 
 const newsletterFormSchema = z.object({
-  email: z.string().email({ message: "Insert a valid e-mail!" }).transform((email) => email.toLowerCase()),
+  email: z.string().email({ message: "Insert a valid email!" }).transform((email) => email.toLowerCase()),
 });
 
 type NewsletterFormData = z.infer<typeof newsletterFormSchema>;
@@ -38,7 +38,7 @@ export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
 
       console.log(err);
     }
-  }
+  };
 
   return (
     <NewsletterFormComponent 
