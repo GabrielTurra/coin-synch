@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 <SignSection>
                   <Dialog.Root>
                     <Dialog.Trigger asChild>
-                      <Button text="Sign in" size="small" color="white" />
+                      <Button text="Sign in" sizeWidth="small" color="white" />
                     </Dialog.Trigger>
 
                     <Dialog.Content>
@@ -109,7 +109,7 @@ export const Header: React.FC<HeaderProps> = () => {
 
                   <Dialog.Root>
                     <Dialog.Trigger asChild>
-                      <Button text="Sign up" size="small" />
+                      <Button text="Sign up" sizeWidth="small" />
                     </Dialog.Trigger>
 
                     <Dialog.Content>

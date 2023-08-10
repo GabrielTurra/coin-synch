@@ -3,11 +3,11 @@ import { ButtonComponent, Icon } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ text = "", color, size, icon, ...props }, forwardedRef) => (
+  ({ text = "", color, sizeWidth, icon, ...props }, forwardedRef) => (
     <ButtonComponent 
       color={color} 
-      size={size} 
-      ref={forwardedRef} 
+      sizeWidth={sizeWidth}
+      ref={forwardedRef}
       {...props}
     >
       {text}
@@ -15,5 +15,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     </ButtonComponent>
   )
 );
-
-Button.displayName = "Button";

@@ -26,7 +26,7 @@ export const Hero:React.FC<HeroProps> = () => {
             <Title>Lorem ipsum dolor sit amet, consectetur</Title>
             <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</Description>
 
-            <Button text="Sign up now" size="big" icon={RightArrowIcon} />
+            <Button text="Sign up now" sizeWidth="big" icon={RightArrowIcon} />
 
             <TagsRow>
               <Tag>Cryptos</Tag>

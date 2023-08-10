@@ -1,14 +1,16 @@
 import React from "react";
-import { InputContainer, TextInputComponent } from "./TextInput.styles";
+import { InputContainer, TextInputComponent, LabelError } from "./TextInput.styles";
 import { TextInputProps } from "./TextInput.types";
 
-export const TextInput:React.FC<TextInputProps> = ({ label, sizeWidth, className, ...props }) => {
-  return (
+export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
+  ({ label, sizeWidth, className, ...props }, forwardedRef) => (
     <TextInputComponent className={className}>
-      {label && <label>{label}</label>}
+      {label && (<label>{label}</label>)}
+      
       <InputContainer sizeWidth={sizeWidth}>
-        <input {...props} />
+        <input ref={forwardedRef} {...props} />
       </InputContainer>
+
     </TextInputComponent>
-  );
-};
+  )
+);

@@ -10,7 +10,7 @@ export const ButtonComponent = styled("button", {
   
   background: "$primary",
   boxSizing: "border-box",
-  color: "white",
+  color: "$white",
   padding: "$3 $6",
   borderRadius: "$xl",
   cursor: "pointer",
@@ -43,7 +43,7 @@ export const ButtonComponent = styled("button", {
         }
       },
     },
-    size: {
+    sizeWidth: {
       small: {
         padding: "$2 $4",
         fontSize: "$sm",

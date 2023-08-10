@@ -1,8 +1,9 @@
+import { ButtonHTMLAttributes } from "react";
 import { StaticImageData } from "next/image";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     text: string;
     color?: "white" | "green";
-    size?: "small" | "big" | "full";
+    sizeWidth?: "small" | "big" | "full";
     icon?: StaticImageData;
 }
