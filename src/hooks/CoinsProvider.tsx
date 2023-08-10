@@ -14,15 +14,7 @@ interface CoinsProviderProps {
 const CoinsContext = createContext<CoinsContextProps>({} as CoinsContextProps);
 
 export const CoinsProvider: React.FC<CoinsProviderProps> = ({ children }) => {
-	const [coins, setCoinsData] = useState<CoinProps[]>([
-    {
-      acronym: '',
-      id: 0,
-      name: '',
-      price_usd: '',
-      variation: '',
-    },
-  ]);
+	const [coins, setCoinsData] = useState<CoinProps[]>([]);
 
 	const setCoins = useCallback((coinsToUpdate: CoinProps[]) => {
 		setCoinsData(coinsToUpdate);

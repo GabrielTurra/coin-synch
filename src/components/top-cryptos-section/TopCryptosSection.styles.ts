@@ -4,7 +4,7 @@ import { AccordionCryptosComponent } from "../accordion-cryptos/AccordionCryptos
 
 export const TopCryptosSectionComponent = styled("div", {  
   textAlign: "center",
-  padding: "$20 0",
+  padding: "$30 0",
 
   h2: {
     marginBottom: "$10",

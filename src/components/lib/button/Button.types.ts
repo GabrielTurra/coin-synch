@@ -3,6 +3,6 @@ import { StaticImageData } from "next/image";
 export interface ButtonProps {
     text: string;
     color?: "white" | "green";
-    size?: "small" | "big";
+    size?: "small" | "big" | "full";
     icon?: StaticImageData;
 }

@@ -9,14 +9,16 @@ export const ButtonComponent = styled("button", {
   all: "unset",
   
   background: "$primary",
+  boxSizing: "border-box",
   color: "white",
   padding: "$3 $6",
   borderRadius: "$xl",
   cursor: "pointer",
   transition: "all 0.2s ease",
   fontSize: "$md",
-  width: "128px",
+  minWidth: "128px",
   textAlign: "center",
+  display: "static",
 
   "&:hover": {
     background: "$orange700",
@@ -54,6 +56,11 @@ export const ButtonComponent = styled("button", {
         width: "230px",
         textTransform: "uppercase",
         fontWeight: "bold"
+      },
+      full: {
+        padding: "$3 $6",
+        fontSize: "$md",
+        width: "100%",
       },
     },
   }

@@ -5,7 +5,7 @@ import { CoinProps } from "../@types/Coins";
 import { useCoins } from "../hooks/CoinsProvider";
 
 interface RouteProps {
-  coins: CoinProps[]
+  coins: CoinProps[];
 }
 
 export const getServerSideProps: GetServerSideProps<RouteProps> = async () => {

@@ -3,7 +3,7 @@ import { styled } from "@/stitches.config";
 
 export const CardsSectionComponent = styled("div", {
   background: "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F7F7F7 100%)",
-  padding: "$20 0"
+  padding: "$30 0"
 });
 
 export const Category = styled("h5", {
