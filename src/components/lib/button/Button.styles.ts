@@ -24,6 +24,12 @@ export const ButtonComponent = styled("button", {
     background: "$orange700",
   },
 
+  "&:disabled": {
+    background: "$gray500",
+    opacity: 0.7,
+    cursor: "not-allowed"
+  },
+
   variants: {
     color: {
       white: {

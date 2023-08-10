@@ -5,6 +5,7 @@ import { Col, Container, Row } from "@/src/styles/grid";
 
 import NewsletterCurve from "@/public/curves/newsletter-curve.svg";
 import { Button, TextInput } from "../lib";
+import { NewsletterForm } from "../newsletter-form";
 
 export const Newsletter:React.FC<NewsletterProps> = () => {
   return (
@@ -29,8 +30,7 @@ export const Newsletter:React.FC<NewsletterProps> = () => {
             '@md': 5,
             '@lg': 4,
           }}>
-            <TextInput className="input" placeholder="Email" label="Email" sizeWidth="full" />
-            <Button text="Subscribe" size="full"  />
+            <NewsletterForm />
           </Col>
         </NewsletterRow>
       </Container>

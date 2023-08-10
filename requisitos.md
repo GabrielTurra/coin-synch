@@ -8,9 +8,9 @@
 [X] Após expandir a lista, o texto "View more +" deverá ser substituido por "View less";
 
 ## Newsletter
-[ ] O formulário de Newsletter no rodapé da página deverá ter interação a API Rest
-[ ] Implementar ação de "Loading" desabilitando o botão de "Subscribe" até o retorno do servidor;
-[ ] Enquanto a ação de subscribe estiver sendo processada o usuário não poderá alterar o campo e-mail (desabilitar o preenchimento do input de texto);
+[X] O formulário de Newsletter no rodapé da página deverá ter interação a API Rest
+[X] Implementar ação de "Loading" desabilitando o botão de "Subscribe" até o retorno do servidor;
+[X] Enquanto a ação de subscribe estiver sendo processada o usuário não poderá alterar o campo e-mail (desabilitar o preenchimento do input de texto);
 [ ] Após retorno de sucesso do servidor, o campo e-mail deve ser limpo e o botão "Subscribe" deve estar disponível novamente;
 
 ## Sign

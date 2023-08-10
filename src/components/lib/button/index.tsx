@@ -3,11 +3,12 @@ import { ButtonComponent, Icon } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ text = "", color, sizeWidth, icon, ...props }, forwardedRef) => (
+  ({ text = "", color, sizeWidth, icon, disabled, ...props }, forwardedRef) => (
     <ButtonComponent 
       color={color} 
       sizeWidth={sizeWidth}
       ref={forwardedRef}
+      disabled={disabled}
       {...props}
     >
       {text}
