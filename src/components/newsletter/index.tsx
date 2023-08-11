@@ -13,22 +13,22 @@ export const Newsletter:React.FC<NewsletterProps> = () => {
       <Container>
         <NewsletterRow>
           <Col size={{
-            '@initial': 12,
-            '@md': 6,
-            '@lg': 4,
+            "@initial": 12,
+            "@md": 6,
+            "@lg": 4,
           }}>
             <Category>Lorem ipsum</Category>
             <Title>Lorem ipsum</Title>
             <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</Description>
           </Col>
           <Col size={{
-            '@initial': 0,
-            '@lg': 1,
+            "@initial": 0,
+            "@lg": 1,
           }} />
           <Col size={{
-            '@initial': 12,
-            '@md': 5,
-            '@lg': 4,
+            "@initial": 12,
+            "@md": 5,
+            "@lg": 4,
           }}>
             <NewsletterForm />
           </Col>

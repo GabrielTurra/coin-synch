@@ -21,9 +21,9 @@ export const TopCryptosSection:React.FC<TopCryptosSectionProps> = () => {
   const toggleShowView = () => {
     setIsShowingAll((previous) => {
       updateListView(!previous);
-      return !previous
+      return !previous;
     });
-  }
+  };
 
   const updateListView = (isShowingAll: boolean) => {
     if(isShowingAll) {
@@ -32,7 +32,7 @@ export const TopCryptosSection:React.FC<TopCryptosSectionProps> = () => {
     }
     
     setCoins(controlCoins.getCoins(4));
-  }
+  };
 
   return (
     <TopCryptosSectionComponent>

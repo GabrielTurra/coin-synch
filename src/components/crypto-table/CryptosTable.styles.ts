@@ -5,11 +5,11 @@ export const CryptosTableComponent = styled("table", {
   textAlign: "start",
   borderCollapse: "collapse",
 
-  '.positive': {
+  ".positive": {
     color: "$green500"
   },
 
-  '.negative': {
+  ".negative": {
     color: "$red500"
   },
 

@@ -26,7 +26,7 @@ export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
 
   async function handleClaimNewsletter(data: NewsletterFormData) {
     try {
-      await api.post('/newsletter', {
+      await api.post("/newsletter", {
         email: data.email
       });
       return reset();
@@ -38,7 +38,7 @@ export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
 
       console.log(err);
     }
-  };
+  }
 
   return (
     <NewsletterFormComponent 

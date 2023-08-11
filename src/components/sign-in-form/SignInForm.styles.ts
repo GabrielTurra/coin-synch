@@ -12,7 +12,9 @@ export const SignInFormComponent = styled("form", {
     a: {
       color: "$gray500",
       fontSize: "$xs",
-      float: "right",
+      height: "100%",
+      display: "block",
+      textAlign: "end",
       margin: "$2 0 $4 0",
       textDecoration: "none",
       transition: "all 0.3s ease",
@@ -42,4 +44,14 @@ export const SignInFormComponent = styled("form", {
 export const Title = styled("h4", {
   fontWeight: "$regular",
   textAlign: "center",
+});
+
+export const ErrorMessage = styled("p", {
+  width: "100%", 
+  height: "5px",
+  display: "block",
+  marginBottom: "$6",
+  color: "$red300 !important",
+  fontSize: "$xs !important",
+  textAlign: "center"
 });

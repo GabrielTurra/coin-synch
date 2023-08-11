@@ -1,6 +1,6 @@
-import { Col, Row } from "@/src/styles/grid";
+import { Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
-import * as Accordion from '@radix-ui/react-accordion';
+import * as Accordion from "@radix-ui/react-accordion";
 
 export const AccordionCryptosComponent = styled("div", {});
 
@@ -8,7 +8,7 @@ export const AccordionItem = styled(Accordion.Item, {
   width: "100%",
 
   "&:nth-child(even) > button": {
-    background: '$gray100',
+    background: "$gray100",
   },
 
   ".AccordionTrigger": {
@@ -75,12 +75,12 @@ export const ContentItem = styled(Row, {
     fontSize: "$xs"
   },
 
-  '.positive': {
-    color: '$green500',
+  ".positive": {
+    color: "$green500",
   },
 
-  '.negative': {
-    color: '$red500',
+  ".negative": {
+    color: "$red500",
   },
 });
 

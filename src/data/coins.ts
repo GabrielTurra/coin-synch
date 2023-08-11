@@ -2,7 +2,7 @@ import { CoinProps } from "../@types/Coins";
 import { appendCoinsImage, formatCoins } from "../mappings/coins";
 
 const baseUrl = process.env.COIN_API_BASE_URL;
-const authHeaders = { headers: { "X-CMC_PRO_API_KEY": `${process.env.COIN_API_KEY}` } }
+const authHeaders = { headers: { "X-CMC_PRO_API_KEY": `${process.env.COIN_API_KEY}` } };
 
 export const getCoinsData = async (limit = 10) => {
   const coinsDataWithoutImage = await getGeneralCoins(limit);

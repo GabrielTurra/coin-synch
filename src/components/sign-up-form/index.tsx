@@ -1,20 +1,26 @@
+// External dependencies
 import React, { useState } from "react";
-import { Error, SignUpFormComponent } from "./SignUpForm.styles";
+import { signIn } from "next-auth/react";
 import { SignUpFormProps } from "./SignUpForm.types";
-import { Button, TextInput } from "../lib";
-import { Title } from "./SignUpForm.styles";
-import * as Modal from "../modal";
-
-import LockIcon from '@/public/icons/lock.svg';
-import MailIcon from '@/public/icons/mail.svg';
-import UserIcon from '@/public/icons/user.svg';
-import { SignInForm } from "../sign-in-form";
-import { ZodError, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+
+// Internal dependencies
+import * as Modal from "../modal";
+import { Button, TextInput } from "../lib";
+import { SignInForm } from "../sign-in-form";
 import { Checkbox } from "../lib/checkbox";
 import { api } from "@/src/lib/axios";
-import { AxiosError } from "axios";
+
+// Images
+import LockIcon from "@/public/icons/lock.svg";
+import MailIcon from "@/public/icons/mail.svg";
+import UserIcon from "@/public/icons/user.svg";
+
+// Styles
+import { ErrorMessage, SignUpFormComponent, Title } from "./SignUpForm.styles";
 
 const signUpFormSchema = z.object({
   name: z.string().regex(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/, { message: "Insert a valid name!" }),
@@ -33,6 +39,7 @@ type SignUpFormSchema = z.infer<typeof signUpFormSchema>;
 
 export const SignUpForm:React.FC<SignUpFormProps> = () => {
   const [globalFormErros, setGlobalFormErros] = useState("");
+  const router = useRouter();
 
   const { 
     register, 
@@ -43,31 +50,37 @@ export const SignUpForm:React.FC<SignUpFormProps> = () => {
     resolver: zodResolver(signUpFormSchema)
   });
 
-  async function handleClaimNewsletter(data: SignUpFormSchema) {
+  async function handleSignUp(data: SignUpFormSchema) {
     try {
-      await api.post('/user', {
+      await api.post("/register", {
         name: data.name,
         email: data.email,
-        password: data.password,
-        confirmPassword: data.confirmPassword,
-        acceptCheckbox: data.acceptCheckbox
+        password: data.password
       });
-      return reset();
-    } catch (err) {
-        if(err instanceof AxiosError) {
-          setGlobalFormErros(err?.response?.data?.message || "");
-        }
-        if(err instanceof ZodError) {
-          setGlobalFormErros(err?.message || "");
-        }
 
-        console.log(err);
-    };
+      const status = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      if(status?.error) {
+        throw new Error("Sorry, we have a problem to initiate your session. Try again later.");
+      }
+
+      reset();
+      router.push("dashboard");
+      
+    } catch (err) {
+      if(err instanceof Error){
+        setGlobalFormErros(err?.message);
+      }
+    }
   }
 
   return (
     <SignUpFormComponent
-      onSubmit={handleSubmit(handleClaimNewsletter)}
+      onSubmit={handleSubmit(handleSignUp)}
     >
       <Title>
         Sign up to <strong><span>Coin</span>Synch</strong>
@@ -109,7 +122,7 @@ export const SignUpForm:React.FC<SignUpFormProps> = () => {
           <p>I have read and accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of User Sign up</a>.</p>
         </Checkbox>
 
-        {globalFormErros && <Error>{globalFormErros}</Error>}
+        {globalFormErros && <ErrorMessage>{globalFormErros}</ErrorMessage>}
       </fieldset>
 
 

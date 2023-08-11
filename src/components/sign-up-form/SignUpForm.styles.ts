@@ -44,7 +44,7 @@ export const Title = styled("h4", {
   textAlign: "center",
 });
 
-export const Error = styled("p", {
+export const ErrorMessage = styled("p", {
   height: "5px",
   marginBottom: "$4",
   color: "$red300 !important",

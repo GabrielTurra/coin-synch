@@ -18,7 +18,7 @@ export const Content = React.forwardRef<HTMLDivElement, DialogContentProps>(
           </ModalBase.Close>
         </ModalBase.Content>
       </DialogPrimitive.Portal>
-    )
+    );
   }
 );
 

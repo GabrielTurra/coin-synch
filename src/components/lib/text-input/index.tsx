@@ -34,14 +34,14 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps> (
               alt=""
               className="type-selector"
               onClick={() => setinputType((value) => {
-                if(value === "password") return "text"
-                return "password"
+                if(value === "password") return "text";
+                return "password";
               })}
             />
           )}
         </InputContainer>
         {error && <Error>{error}</Error>}
       </TextInputComponent>
-    )
+    );
   }
 );

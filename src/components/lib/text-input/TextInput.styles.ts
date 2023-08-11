@@ -20,7 +20,7 @@ export const InputContainer = styled("div", {
   background: "$white",
   padding: "$2 $4",
   maxWidth: "100%",
-  borderRadius: '$sm',
+  borderRadius: "$sm",
   boxSizing: "border-box",
   border: "1px solid $gray300",
   transition: "all 0.2s ease",

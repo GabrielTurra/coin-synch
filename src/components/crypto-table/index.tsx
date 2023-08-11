@@ -9,21 +9,21 @@ export const CryptosTable:React.FC<CryptosTableProps> = ({ coins }) => {
     <CryptosTableComponent>
       <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Crypto</th>
-            <th scope="col">Price</th>
-            <th scope="col">Change</th>
-            <th scope="col">Trade</th>
+          <th scope="col">#</th>
+          <th scope="col">Crypto</th>
+          <th scope="col">Price</th>
+          <th scope="col">Change</th>
+          <th scope="col">Trade</th>
         </tr>
       </thead>
       <tbody>
         {coins.map((coin, index) => (
           <tr key={index}>
-            <td>{String(index + 1).padStart(2, '0')}</td>
+            <td>{String(index + 1).padStart(2, "0")}</td>
             <td>
               <div>
                 <Image 
-                  src={coin.image || ''}
+                  src={coin.image || ""}
                   width={32}
                   height={32}
                   alt=""
