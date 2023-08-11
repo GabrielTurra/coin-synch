@@ -43,3 +43,11 @@ export const Title = styled("h4", {
   fontWeight: "$regular",
   textAlign: "center",
 });
+
+export const Error = styled("p", {
+  height: "5px",
+  marginBottom: "$4",
+  color: "$red300 !important",
+  fontSize: "$xs !important",
+  textAlign: "center"
+});

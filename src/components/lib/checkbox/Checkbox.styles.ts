@@ -19,7 +19,7 @@ export const Error = styled("label", {
   marginTop: "2px",
   color: "$red300 !important",
   fontSize: "$xs !important",
-});import { fontWeights } from './../../../styles/tokens/font-weights';
+});
 
 
 

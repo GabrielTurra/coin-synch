@@ -1,5 +1,5 @@
-import React from "react";
-import { SignUpFormComponent } from "./SignUpForm.styles";
+import React, { useState } from "react";
+import { Error, SignUpFormComponent } from "./SignUpForm.styles";
 import { SignUpFormProps } from "./SignUpForm.types";
 import { Button, TextInput } from "../lib";
 import { Title } from "./SignUpForm.styles";
@@ -9,10 +9,12 @@ import LockIcon from '@/public/icons/lock.svg';
 import MailIcon from '@/public/icons/mail.svg';
 import UserIcon from '@/public/icons/user.svg';
 import { SignInForm } from "../sign-in-form";
-import { z } from "zod";
+import { ZodError, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Checkbox } from "../lib/checkbox";
+import { api } from "@/src/lib/axios";
+import { AxiosError } from "axios";
 
 const signUpFormSchema = z.object({
   name: z.string().regex(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/, { message: "Insert a valid name!" }),
@@ -30,6 +32,8 @@ const signUpFormSchema = z.object({
 type SignUpFormSchema = z.infer<typeof signUpFormSchema>;
 
 export const SignUpForm:React.FC<SignUpFormProps> = () => {
+  const [globalFormErros, setGlobalFormErros] = useState("");
+
   const { 
     register, 
     handleSubmit, 
@@ -40,8 +44,26 @@ export const SignUpForm:React.FC<SignUpFormProps> = () => {
   });
 
   async function handleClaimNewsletter(data: SignUpFormSchema) {
-    console.log(data);
-  };
+    try {
+      await api.post('/user', {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        acceptCheckbox: data.acceptCheckbox
+      });
+      return reset();
+    } catch (err) {
+        if(err instanceof AxiosError) {
+          setGlobalFormErros(err?.response?.data?.message || "");
+        }
+        if(err instanceof ZodError) {
+          setGlobalFormErros(err?.message || "");
+        }
+
+        console.log(err);
+    };
+  }
 
   return (
     <SignUpFormComponent
@@ -86,7 +108,10 @@ export const SignUpForm:React.FC<SignUpFormProps> = () => {
         <Checkbox error={errors.acceptCheckbox?.message} {...register("acceptCheckbox")}>
           <p>I have read and accept the <a href="#">Privacy Policy</a> and <a href="#">Terms of User Sign up</a>.</p>
         </Checkbox>
+
+        {globalFormErros && <Error>{globalFormErros}</Error>}
       </fieldset>
+
 
       <Button 
         text="Sign up" 
