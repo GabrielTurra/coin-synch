@@ -1,5 +1,8 @@
 import { NavigationItemProps } from "../CollapsibleNavigation.types";
-import { NavigationItem as NavigationItemComponent } from "../CollapsibleNavigation.styles";
+import {
+  NavigationItem as NavigationItemComponent,
+  NavigationContent,
+} from "../CollapsibleNavigation.styles";
 import Image from "next/image";
 import * as Tooltip from "../../lib/tooltip";
 
@@ -9,9 +12,12 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({ icon }) => {
       <Tooltip.Provider>
         <Tooltip.Root delayDuration={100}>
           <Tooltip.Trigger asChild>
-            <Image src={icon} width={32} height={32} alt="" />
+            <NavigationContent>
+              <Image src={icon} width={32} height={32} alt="" />
+              <span>Lorem ipsum</span>
+            </NavigationContent>
           </Tooltip.Trigger>
-          <Tooltip.Content side="right" />
+          <Tooltip.Content text="Lorem Ipsum" side="right" />
         </Tooltip.Root>
       </Tooltip.Provider>
     </NavigationItemComponent>

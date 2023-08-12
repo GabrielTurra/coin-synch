@@ -1,7 +1,9 @@
 import { Page } from "@/src/components/page";
 import { styled } from "@/stitches.config";
 
-export const DashboardComponent = styled(Page, {});
+export const DashboardComponent = styled(Page, {
+  paddingTop: "65px !important",
+});
 
 export const DashboardContent = styled("div", {
   backgroundColor: "#F9F9F9",

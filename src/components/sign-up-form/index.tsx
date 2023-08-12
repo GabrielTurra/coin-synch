@@ -8,8 +8,7 @@ import { useForm } from "react-hook-form";
 import { AxiosError } from "axios";
 
 // Internal dependencies
-import * as Modal from "../lib/modal";
-import { Button, TextInput } from "../lib";
+import { Modal, Button, TextInput } from "../lib";
 import { SignInForm } from "../sign-in-form";
 import { Checkbox } from "../lib/checkbox";
 import { api } from "@/src/lib/axios";

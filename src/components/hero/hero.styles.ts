@@ -4,9 +4,16 @@ import { SwiperSlide } from "swiper/react";
 
 export const HeroComponent = styled("div", {
   minHeight: "60vh",
+  marginTop: "30px",
+  paddingTop: "100px",
 
   "@md": {
     height: "65vh",
+    paddingTop: "0",
+  },
+
+  "@lg": {
+    marginTop: 0,
   },
 });
 

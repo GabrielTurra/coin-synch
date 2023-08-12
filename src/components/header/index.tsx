@@ -1,6 +1,7 @@
 // External Dependencies
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Internal Dependencies
 import { Logo } from "./logo";
@@ -27,12 +28,15 @@ import {
   HeaderLoggedRow,
   SignHorizontalCol,
   CollapsibleMenuIcon,
+  BarsIconStatic,
 } from "./Header.styles";
 import { CollapsibleNavigation } from "../collapsible-navigation";
+import { useCollapsiblenavigation } from "@/src/hooks/CollapsibleNavigation";
 
 export const Header: React.FC<HeaderProps> = () => {
   const controlCoins = useCoins();
   const { status } = useSession();
+  const controlCollapsible = useCollapsiblenavigation();
 
   const isAuthenticated = status === "authenticated";
 
@@ -41,7 +45,15 @@ export const Header: React.FC<HeaderProps> = () => {
       <HeaderComponent>
         <HeaderContainer>
           <HeaderLoggedRow>
-            <Col size={{ "@initial": 3, "@lg": 0 }}>a</Col>
+            <Col size={{ "@initial": 3, "@lg": 0 }}>
+              <CollapsibleMenuIcon
+                src={BarsIcon.src}
+                width={24}
+                height={24}
+                alt={"bars"}
+                onClick={() => controlCollapsible.toggleCollapsiblenavigation()}
+              />
+            </Col>
             <LogoCol>
               <Link href="/dashboard">
                 <Logo />
@@ -71,12 +83,12 @@ export const Header: React.FC<HeaderProps> = () => {
           </Col>
           <Col size={{ "@initial": 4, "@lg": 6 }}>
             <SignRow>
-              <SignHorizontalCol size={{ "@initial": 0, "@lg": 7 }}>
+              <SignHorizontalCol size={{ "@initial": 1, "@lg": 7 }}>
                 <HorizontalScrollList coins={controlCoins.getCoins(4)} />
               </SignHorizontalCol>
 
               <Col size={{ "@initial": 12, "@lg": 5 }}>
-                <CollapsibleMenuIcon
+                <BarsIconStatic
                   src={BarsIcon.src}
                   width={24}
                   height={24}

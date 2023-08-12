@@ -29,6 +29,21 @@ export const HeaderRow = styled(Row, {
 export const HeaderLoggedRow = styled(Row, {
   alignItems: "center",
   justifyContent: "space-between",
+  textAlign: "start",
+
+  img: {
+    float: "unset",
+  },
+});
+
+export const CollapsibleMenuIcon = styled(Image, {
+  alignItems: "center",
+  justifyContent: "space-between",
+  textAlign: "start",
+
+  img: {
+    float: "unset",
+  },
 });
 
 export const LogoCol = styled(Col, {
@@ -57,7 +72,6 @@ export const UserComponent = styled("div", {
   transition: "all 0.3s ease",
   borderRadius: "$md",
   position: "relative",
-  zIndex: "3",
 
   "&:hover": {
     ".icon": {
@@ -120,13 +134,17 @@ export const HeaderLogo = styled(Image, {
 
 export const Navigation = styled("ul", {
   listStyle: "none",
-  margin: "0 32px",
+  margin: "0",
   fontSize: "$sm",
   alignItems: "center",
   display: "none",
 
   "@sm": {
     display: "flex",
+  },
+
+  "@md": {
+    margin: "0 32px",
   },
 
   li: {
@@ -181,7 +199,7 @@ export const SignHorizontalCol = styled(Col, {
   },
 });
 
-export const CollapsibleMenuIcon = styled(Image, {
+export const BarsIconStatic = styled(Image, {
   display: "block",
   float: "right",
 
