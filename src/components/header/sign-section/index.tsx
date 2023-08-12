@@ -1,4 +1,4 @@
-import * as Modal from "../../modal";
+import * as Modal from "../../lib/modal";
 import { Button } from "../../lib";
 import { SignInForm } from "../../sign-in-form";
 import { SignUpForm } from "../../sign-up-form";

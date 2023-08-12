@@ -1,41 +1,39 @@
 import { prisma } from "@/src/lib/prisma";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { compare } from "bcryptjs";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       name: "credentials",
       credentials: {
         email: {},
-        password: {}
+        password: {},
       },
       async authorize(credentials) {
         const { email, password } = credentials as {
-          email: string,
-          password: string,
+          email: string;
+          password: string;
         };
 
-        if(!password){
+        if (!password) {
           return null;
         }
 
         const user = await prisma.user.findUnique({
           where: {
             email,
-          }
+          },
         });
 
-        if(!user){
+        if (!user) {
           return null;
         }
 
         const doesPasswordMatches = await compare(password, user.password_hash);
 
-        if(!doesPasswordMatches) {
+        if (!doesPasswordMatches) {
           return null;
         }
 
@@ -45,7 +43,7 @@ export const authOptions: NextAuthOptions = {
           email: user.email,
           image: "https://avatars.githubusercontent.com/u/73565475?v=4",
         };
-      }
+      },
     }),
   ],
   session: {

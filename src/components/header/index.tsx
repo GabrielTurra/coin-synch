@@ -28,6 +28,7 @@ import {
   SignHorizontalCol,
   CollapsibleMenuIcon,
 } from "./Header.styles";
+import { CollapsibleNavigation } from "../collapsible-navigation";
 
 export const Header: React.FC<HeaderProps> = () => {
   const controlCoins = useCoins();
@@ -51,6 +52,7 @@ export const Header: React.FC<HeaderProps> = () => {
             </Col>
           </HeaderLoggedRow>
         </HeaderContainer>
+        <CollapsibleNavigation />
       </HeaderComponent>
     );
   }

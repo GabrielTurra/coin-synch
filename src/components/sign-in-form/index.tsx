@@ -1,6 +1,6 @@
 // External dependencies
 import React, { useState } from "react";
-import * as Modal from "../modal";
+import * as Modal from "../lib/modal";
 import { signIn } from "next-auth/react";
 import { Button, TextInput } from "../lib";
 import { useForm } from "react-hook-form";
