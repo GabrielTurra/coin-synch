@@ -5,9 +5,9 @@ import Image from "next/image";
 export const HeaderComponent = styled("div", {
   position: "fixed",
   top: 0,
-  
+
   background: "$white",
-  
+
   width: "100%",
   height: "64px",
 
@@ -17,14 +17,100 @@ export const HeaderComponent = styled("div", {
 
   "@lg": {
     borderBottom: "none",
-  }
+  },
 });
 
-export const HeaderContainer = styled(Container, {
-});
+export const HeaderContainer = styled(Container, {});
 
 export const HeaderRow = styled(Row, {
   alignItems: "center",
+});
+
+export const HeaderLoggedRow = styled(Row, {
+  alignItems: "center",
+  justifyContent: "space-between",
+});
+
+export const LogoCol = styled(Col, {
+  textAlign: "center",
+
+  "@lg": {
+    textAlign: "start",
+  },
+});
+
+export const SignSectionLogged = styled("div", {
+  textAlign: "end",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "end",
+  cursor: "pointer",
+});
+
+export const UserComponent = styled("div", {
+  textAlign: "center",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "$2 0",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+  borderRadius: "$md",
+  position: "relative",
+  zIndex: "3",
+
+  "&:hover": {
+    ".icon": {
+      transform: "rotate(180deg)",
+    },
+
+    ul: {
+      display: "block",
+    },
+  },
+
+  img: {
+    borderRadius: "$full",
+  },
+
+  ".icon": {
+    marginRight: "0px",
+    marginLeft: "5px",
+    transition: "all 0.3s ease",
+  },
+});
+
+export const ListMenu = styled("ul", {
+  position: "absolute",
+  display: "none",
+  top: "35px",
+  right: "20px",
+  padding: "$2 0",
+  listStyle: "none",
+  boxShadow: "0px 4px 8px 0px rgba(77, 77, 77, 0.10)",
+  borderRadius: "$md",
+  zIndex: "4",
+  transition: "all 0.3s ease",
+  background: "$white",
+
+  li: {
+    padding: "$2 $8",
+    color: "$gray500",
+
+    "&:hover": {
+      background: "$gray100",
+    },
+  },
+});
+
+export const Name = styled("span", {
+  fontSize: "$sm",
+  display: "none",
+  marginLeft: "8px",
+
+  "@sm": {
+    display: "block",
+  },
 });
 
 export const HeaderLogo = styled(Image, {
@@ -49,14 +135,14 @@ export const Navigation = styled("ul", {
     transition: "all 0.2s ease",
 
     "&:hover": {
-      color: "$primary"
-    }
-  }
+      color: "$primary",
+    },
+  },
 });
 
 export const SignSection = styled("div", {
   textAlign: "end",
-  position: "relative", 
+  position: "relative",
   display: "none",
 
   "@sm": {
@@ -85,14 +171,14 @@ export const SignHorizontalCol = styled(Col, {
     display: "flex",
     alignItems: "center",
     boxShadow: "0px 4px 8px 0px rgba(77, 77, 77, 0.10)",
-    
+
     "@lg": {
       position: "relative",
       background: "unset",
       top: "inherit",
       boxShadow: "none",
-    }
-  }
+    },
+  },
 });
 
 export const CollapsibleMenuIcon = styled(Image, {
@@ -100,8 +186,6 @@ export const CollapsibleMenuIcon = styled(Image, {
   float: "right",
 
   "@sm": {
-    display: "none"
-  }
+    display: "none",
+  },
 });
-
-
