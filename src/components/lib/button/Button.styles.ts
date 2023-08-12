@@ -7,7 +7,7 @@ export const Icon = styled(Image, {
 
 export const ButtonComponent = styled("button", {
   all: "unset",
-  
+
   background: "$primary",
   boxSizing: "border-box",
   color: "$white",
@@ -27,7 +27,7 @@ export const ButtonComponent = styled("button", {
   "&:disabled": {
     background: "$gray500",
     opacity: 0.7,
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
 
   variants: {
@@ -38,7 +38,7 @@ export const ButtonComponent = styled("button", {
 
         "&:hover": {
           background: "$gray300",
-        }
+        },
       },
       green: {
         background: "$green700",
@@ -46,7 +46,7 @@ export const ButtonComponent = styled("button", {
 
         "&:hover": {
           background: "$green900",
-        }
+        },
       },
     },
     sizeWidth: {
@@ -61,7 +61,7 @@ export const ButtonComponent = styled("button", {
         fontSize: "$sm",
         width: "230px",
         textTransform: "uppercase",
-        fontWeight: "bold"
+        fontWeight: "bold",
       },
       full: {
         padding: "$3 $6",
@@ -69,5 +69,5 @@ export const ButtonComponent = styled("button", {
         width: "100%",
       },
     },
-  }
+  },
 });

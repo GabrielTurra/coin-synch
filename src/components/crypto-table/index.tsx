@@ -4,7 +4,7 @@ import { CryptosTableProps } from "./CryptosTable.types";
 import { Button } from "../lib";
 import Image from "next/image";
 
-export const CryptosTable:React.FC<CryptosTableProps> = ({ coins }) => {
+export const CryptosTable: React.FC<CryptosTableProps> = ({ coins }) => {
   return (
     <CryptosTableComponent>
       <thead>
@@ -22,21 +22,17 @@ export const CryptosTable:React.FC<CryptosTableProps> = ({ coins }) => {
             <td>{String(index + 1).padStart(2, "0")}</td>
             <td>
               <div>
-                <Image 
-                  src={coin.image || ""}
-                  width={32}
-                  height={32}
-                  alt=""
-                />
+                <Image src={coin.image || ""} width={32} height={32} alt="" />
                 {coin.name}
                 <span>{coin.acronym}</span>
               </div>
             </td>
             <td>US {coin.price_usd}</td>
-            {Number(coin.variation) > 0 
-              ? <td className="positive">+{coin.variation}%</td>
-              : <td className="negative">{coin.variation}%</td>
-            }
+            {Number(coin.variation) > 0 ? (
+              <td className="positive">+{coin.variation}%</td>
+            ) : (
+              <td className="negative">{coin.variation}%</td>
+            )}
             <td>
               <Button text="Buy" color="green" sizeWidth="small" />
             </td>

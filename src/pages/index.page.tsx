@@ -25,8 +25,8 @@ const Home = ({ ...props }: RouteProps) => {
   const controlCoins = useCoins();
   const { status } = useSession();
 
-  if(status === "authenticated") router.push("/dashboard");
-  
+  if (status === "authenticated") router.push("/dashboard");
+
   controlCoins.setCoins(props.coins);
 
   return <HomeLayout />;

@@ -20,34 +20,34 @@ export const AccordionItem = styled(Accordion.Item, {
     alignItems: "center",
     padding: "$4 $6",
     fontSize: "$xs",
-    
+
     "> div": {
       display: "flex",
       alignItems: "center",
-  
+
       img: {
         marginRight: "$2",
         transition: "all 0.3s ease",
       },
-  
+
       span: {
         display: "inline-block",
         marginLeft: "$2",
-        color: "$gray500"
+        color: "$gray500",
       },
     },
 
     "> img": {
       transition: "all 0.3s ease",
     },
-    
-    "&[data-state=\"open\"]": {
+
+    "&[data-state='open']": {
       borderBottom: "1px solid $gray100",
       "> img": {
-        transform: "rotate(180deg)"
-      }
+        transform: "rotate(180deg)",
+      },
     },
-  }
+  },
 });
 
 export const ContentDisplay = styled("div", {
@@ -62,8 +62,8 @@ export const ContentHead = styled(Row, {
   color: "$gray500",
 
   p: {
-    fontSize: "$xs"
-  }
+    fontSize: "$xs",
+  },
 });
 
 export const ContentItem = styled(Row, {
@@ -72,7 +72,7 @@ export const ContentItem = styled(Row, {
   fontSize: "$sm",
 
   p: {
-    fontSize: "$xs"
+    fontSize: "$xs",
   },
 
   ".positive": {
@@ -83,4 +83,3 @@ export const ContentItem = styled(Row, {
     color: "$red500",
   },
 });
-

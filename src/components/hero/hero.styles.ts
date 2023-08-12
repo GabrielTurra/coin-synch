@@ -18,24 +18,24 @@ export const CustomSwiperSlide = styled(SwiperSlide, {
   },
 
   "@md": {
-    "img": {
+    img: {
       width: "350px",
       height: "350px",
-    }
+    },
   },
 
   "@lg": {
-    "img": {
+    img: {
       width: "450px",
       height: "450px",
-    }
+    },
   },
 
   "@xl": {
-    "img": {
+    img: {
       width: "550px",
       height: "550px",
-    }
+    },
   },
 });
 
@@ -44,51 +44,51 @@ export const HeroContainer = styled("div", {
   height: "100%",
   margin: "0 auto",
   width: "90%",
-  maxWidth: "90%", 
-  
-  "@sm": { 
-    width: "100%", 
+  maxWidth: "90%",
+
+  "@sm": {
+    width: "100%",
     maxWidth: "540px",
-  }, 
-  
+  },
+
   "@md": {
     padding: "0",
     margin: "0",
-    marginLeft: "auto", 
+    marginLeft: "auto",
     width: "calc(100vw - ((100vw - 672px) / 2))",
-    maxWidth: "100%"
-  }, 
-    
+    maxWidth: "100%",
+  },
+
   "@lg": {
     width: "calc(100vw - ((100vw - 960px) / 2))",
   },
-    
+
   "@xl": {
     width: "calc(100vw - ((100vw - 1216px) / 2))",
   },
 });
 
 export const Title = styled("h1", {
-  color: "$primary"
+  color: "$primary",
 });
 
 export const Description = styled("p", {
   fontSize: "$xl",
-  margin: "32px 0"
+  margin: "32px 0",
 });
 
 export const HeroRow = styled(Row, {
   alignItems: "center",
   textAlign: "center",
   justifyContent: "space-between",
-  
+
   "@md": {
     textAlign: "start",
-  }, 
-  
+  },
+
   "@xl": {
     alignItems: "end",
-  }, 
+  },
 });
 
 export const TagsRow = styled(Row, {
@@ -97,7 +97,7 @@ export const TagsRow = styled(Row, {
 
   "@md": {
     justifyContent: "start",
-  }, 
+  },
 });
 
 export const Tag = styled("div", {
@@ -114,13 +114,13 @@ export const Tag = styled("div", {
   "&:hover": {
     color: "$white",
     background: "$orange500",
-  }
+  },
 });
 
 export const SliderCol = styled(Col, {
   display: "none",
 
   "@md": {
-    display: "block"
-  }
+    display: "block",
+  },
 });

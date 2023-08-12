@@ -2,18 +2,19 @@ import { Row, Container } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
 
 export const CardsSectionComponent = styled("div", {
-  background: "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F7F7F7 100%)",
-  padding: "$30 0"
+  background:
+    "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F7F7F7 100%)",
+  padding: "$30 0",
 });
 
 export const Category = styled("h5", {
   color: "$primary",
   fontWeight: "$bold",
-  marginBottom: "$2"
+  marginBottom: "$2",
 });
 
 export const Title = styled("h2", {
-  fontWeight: "$bold"
+  fontWeight: "$bold",
 });
 
 export const Description = styled("p", {
@@ -22,25 +23,25 @@ export const Description = styled("p", {
 
 export const SectionContainer = styled(Container, {
   width: "95%",
-  maxWidth: "95%", 
+  maxWidth: "95%",
   padding: 0,
   margin: 0,
   marginLeft: "5%",
 
-  "@sm": { 
+  "@sm": {
     margin: "0 auto",
     padding: "0 $4",
     maxWidth: "540px",
   },
 
-  "@md": { 
+  "@md": {
     maxWidth: "672px",
-  }, 
-  
+  },
+
   "@lg": {
     maxWidth: "960px",
   },
-  
+
   "@xl": {
     maxWidth: "1216px",
   },
@@ -59,7 +60,7 @@ export const SectionRow = styled(Row, {
   },
   ".col-cards": {
     marginTop: "$10",
-    order: 2
+    order: 2,
   },
 });
 
@@ -80,7 +81,7 @@ export const CardsList = styled("div", {
   },
 
   "@lg": {
-    paddingRight: "20px"
+    paddingRight: "20px",
   },
 
   "> div:nth-child(n+3)": {
@@ -93,5 +94,5 @@ export const CardsList = styled("div", {
       marginLeft: "$20",
       marginRight: "-$20",
     },
-  }
+  },
 });

@@ -43,7 +43,7 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
           name: user.name,
           email: user.email,
-          image: "",
+          image: "https://avatars.githubusercontent.com/u/73565475?v=4",
         };
       }
     }),

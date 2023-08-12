@@ -6,8 +6,8 @@ const nextConfig = {
     "api.tsx",
   ],
   images: {
-		domains: ['s2.coinmarketcap.com'],
-	},
+    domains: ["s2.coinmarketcap.com", "avatars.githubusercontent.com"],
+  },
 };
 
 module.exports = nextConfig;

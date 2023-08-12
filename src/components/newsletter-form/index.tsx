@@ -9,29 +9,32 @@ import { api } from "@/src/lib/axios";
 import { AxiosError } from "axios";
 
 const newsletterFormSchema = z.object({
-  email: z.string().email({ message: "Insert a valid email!" }).transform((email) => email.toLowerCase()),
+  email: z
+    .string()
+    .email({ message: "Insert a valid email!" })
+    .transform((email) => email.toLowerCase()),
 });
 
 type NewsletterFormData = z.infer<typeof newsletterFormSchema>;
 
-export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
-  const { 
-    register, 
-    handleSubmit, 
+export const NewsletterForm: React.FC<NewsletterFormProps> = () => {
+  const {
+    register,
+    handleSubmit,
     reset,
-    formState: { errors, isSubmitting } 
+    formState: { errors, isSubmitting },
   } = useForm<NewsletterFormData>({
-    resolver: zodResolver(newsletterFormSchema)
+    resolver: zodResolver(newsletterFormSchema),
   });
 
   async function handleClaimNewsletter(data: NewsletterFormData) {
     try {
       await api.post("/newsletter", {
-        email: data.email
+        email: data.email,
       });
       return reset();
     } catch (err) {
-      if(err instanceof AxiosError) {
+      if (err instanceof AxiosError) {
         console.log(err?.response?.data?.message);
         return reset();
       }
@@ -41,12 +44,12 @@ export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
   }
 
   return (
-    <NewsletterFormComponent 
-      as="form" 
+    <NewsletterFormComponent
+      as="form"
       onSubmit={handleSubmit(handleClaimNewsletter)}
     >
-      <TextInput 
-        className="input" 
+      <TextInput
+        className="input"
         placeholder="Email"
         label={errors.email?.message || "Email"}
         sizeWidth="full"
@@ -54,9 +57,9 @@ export const NewsletterForm:React.FC<NewsletterFormProps> = () => {
         {...register("email")}
       />
 
-      <Button 
-        text="Subscribe" 
-        sizeWidth="full"  
+      <Button
+        text="Subscribe"
+        sizeWidth="full"
         type="submit"
         disabled={isSubmitting}
       />

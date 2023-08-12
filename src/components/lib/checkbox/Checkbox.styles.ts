@@ -9,9 +9,9 @@ export const CheckboxComponent = styled("div", {
       float: "unset",
       fontSize: "$sm",
       fontWeight: "$bold",
-      color: "$textBase"
-    }
-  }
+      color: "$textBase",
+    },
+  },
 });
 
 export const Error = styled("label", {
@@ -20,8 +20,6 @@ export const Error = styled("label", {
   color: "$red300 !important",
   fontSize: "$xs !important",
 });
-
-
 
 export const CheckboxItem = styled("label", {
   display: "block",
@@ -32,13 +30,13 @@ export const CheckboxItem = styled("label", {
   width: "$4",
   marginTop: "$4",
   marginRight: "$2",
-    
+
   "input:checked ~ span": {
     backgroundColor: "$primary",
   },
 
   "input:checked ~ span:after": {
-    display: "block"
+    display: "block",
   },
 
   input: {
@@ -68,6 +66,6 @@ export const CheckboxItem = styled("label", {
       border: "solid white",
       borderWidth: "0 3px 3px 0",
       transform: "rotate(45deg)",
-    }
-  }
+    },
+  },
 });

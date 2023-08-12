@@ -7,7 +7,7 @@ const scrollText = keyframes({
 });
 
 export const HorizontalContent = styled("div", {
-  animation: `${scrollText} 40s linear infinite`, 
+  animation: `${scrollText} 40s linear infinite`,
 });
 
 export const HorizontalScrollListComponent = styled("div", {
@@ -15,25 +15,25 @@ export const HorizontalScrollListComponent = styled("div", {
     margin: "0 15px",
     fontSize: "$sm",
   },
-  
+
   ".title": {
-    color: "$black"
+    color: "$black",
   },
-  
+
   ".variation": {
-    color: "$black"
+    color: "$black",
   },
-      
+
   ".positive_variation": {
-    color: "$green500"
+    color: "$green500",
   },
-      
+
   ".negative_variation": {
-    color: "$red500"
+    color: "$red500",
   },
-      
+
   ".value": {
-    margin: "0 $2"
+    margin: "0 $2",
   },
 
   [`&:hover ${HorizontalContent}`]: {
@@ -51,7 +51,6 @@ export const ListContainer = styled(Container, {
   alignItems: "center",
 
   "@sm": {
-    maxWidth: "352px"
-  } 
+    maxWidth: "352px",
+  },
 });
-

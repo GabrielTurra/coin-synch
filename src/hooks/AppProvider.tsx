@@ -6,9 +6,5 @@ interface AppProviderProps {
 }
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return (
-    <CoinsProvider>
-      {children}
-    </CoinsProvider>
-  );
+  return <CoinsProvider>{children}</CoinsProvider>;
 };

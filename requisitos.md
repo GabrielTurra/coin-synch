@@ -23,11 +23,12 @@
 [X] Os campos "Name", "Email", "Password", "Confirm Password" e o checkbox "I have read and accept the Privacy Policy and Terms of User Sign up." deverão ser obrigatórios;
 [X] O input de e-mail deverá ser validado (e-mail válido)
 [X] Os inputs Passwords e Confirm Password deverão ser iguais para se tornarem válidos;
-[-] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
+[ ] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
 
 #Dashboard:
-[ ] O topo da página deverá ter as informações do usuário (Avatar e Nome, esses dados deverão ser consumidos da API Rest)
-[ ] O topo também deverá ter um dropdown com uma única opção (Logout);
+[ ] colocar icone de logout
+[X] O topo da página deverá ter as informações do usuário (Avatar e Nome, esses dados deverão ser consumidos da API Rest)
+[X] O topo também deverá ter um dropdown com uma única opção (Logout);
 [ ] Menu lateral com tooltip deverá ter as funções de expandir e minimizar;
 [ ] Conteúdo deve ser exibido com os dados consumidos da API;
 [ ] O valor exibido no bloco "Balance in US$" deverá ser formatado;

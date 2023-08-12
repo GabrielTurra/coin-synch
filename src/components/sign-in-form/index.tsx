@@ -20,23 +20,28 @@ import MailIcon from "@/public/icons/mail.svg";
 import { ErrorMessage, SignInFormComponent, Title } from "./SignInForm.styles";
 
 const signInFormSchema = z.object({
-  email: z.string().email({ message: "Insert a valid email!" }).transform((email) => email.toLowerCase()),
-  password: z.string().min(6, { message: "Password must be at least 6 characters long!" }),
+  email: z
+    .string()
+    .email({ message: "Insert a valid email!" })
+    .transform((email) => email.toLowerCase()),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters long!" }),
 });
 
 type SignInFormSchema = z.infer<typeof signInFormSchema>;
 
-export const SignInForm:React.FC<SignInFormProps> = () => {
+export const SignInForm: React.FC<SignInFormProps> = () => {
   const [globalFormErros, setGlobalFormErros] = useState("");
   const router = useRouter();
 
-  const { 
-    register, 
-    handleSubmit, 
+  const {
+    register,
+    handleSubmit,
     reset,
-    formState: { errors, isSubmitting } 
+    formState: { errors, isSubmitting },
   } = useForm<SignInFormSchema>({
-    resolver: zodResolver(signInFormSchema)
+    resolver: zodResolver(signInFormSchema),
   });
 
   async function handleSignIn(data: SignInFormSchema) {
@@ -47,14 +52,13 @@ export const SignInForm:React.FC<SignInFormProps> = () => {
         redirect: false,
       });
 
-      if(status?.error){
+      if (status?.error) {
         throw new Error("Invalid credentials!");
       }
 
       router.push("dashboard");
-
     } catch (err) {
-      if(err instanceof Error){
+      if (err instanceof Error) {
         setGlobalFormErros(err?.message);
       }
       reset();
@@ -64,22 +68,25 @@ export const SignInForm:React.FC<SignInFormProps> = () => {
   return (
     <SignInFormComponent onSubmit={handleSubmit(handleSignIn)}>
       <Title>
-        Sign in to <strong><span>Coin</span>Synch</strong>
+        Sign in to{" "}
+        <strong>
+          <span>Coin</span>Synch
+        </strong>
       </Title>
-  
+
       <fieldset>
-        <TextInput 
+        <TextInput
           error={errors.email?.message || ""}
-          icon={MailIcon.src} 
-          placeholder="Email" 
+          icon={MailIcon.src}
+          placeholder="Email"
           {...register("email")}
           disabled={isSubmitting}
         />
-        <TextInput 
+        <TextInput
           error={errors.password?.message || ""}
-          icon={LockIcon.src} 
-          placeholder="Password" 
-          type="password" 
+          icon={LockIcon.src}
+          placeholder="Password"
+          type="password"
           {...register("password")}
           disabled={isSubmitting}
         />
@@ -88,11 +95,14 @@ export const SignInForm:React.FC<SignInFormProps> = () => {
         {globalFormErros && <ErrorMessage>{globalFormErros}</ErrorMessage>}
         <Button text="Sign in" sizeWidth="full" />
       </fieldset>
-  
+
       <Modal.Root>
         <Modal.Trigger asChild>
           <p>
-            Don’t have an account? <strong>Sign up to <span>Coin</span>Synch</strong>
+            Don’t have an account?{" "}
+            <strong>
+              Sign up to <span>Coin</span>Synch
+            </strong>
           </p>
         </Modal.Trigger>
         <Modal.Content>
@@ -101,4 +111,4 @@ export const SignInForm:React.FC<SignInFormProps> = () => {
       </Modal.Root>
     </SignInFormComponent>
   );
-}; 
+};

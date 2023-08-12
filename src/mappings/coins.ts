@@ -6,7 +6,10 @@ export const formatCoins = (rawCoins: any): CoinProps[] => {
       id: coinInfo.id,
       name: coinInfo.name,
       acronym: coinInfo.symbol,
-      price_usd: new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(coinInfo.quote.USD.price),
+      price_usd: new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(coinInfo.quote.USD.price),
       variation: String(coinInfo.quote.USD.percent_change_24h.toFixed(2)),
     } as CoinProps;
     return coin;
@@ -15,7 +18,10 @@ export const formatCoins = (rawCoins: any): CoinProps[] => {
   return formatedCoins;
 };
 
-export const appendCoinsImage = (rawCoins: any, coins: CoinProps[]): CoinProps[] => {
+export const appendCoinsImage = (
+  rawCoins: any,
+  coins: CoinProps[],
+): CoinProps[] => {
   const formatedCoins = coins.map((coin) => {
     coin.image = rawCoins.data[coin.id].logo;
 

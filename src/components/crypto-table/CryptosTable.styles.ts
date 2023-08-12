@@ -6,11 +6,11 @@ export const CryptosTableComponent = styled("table", {
   borderCollapse: "collapse",
 
   ".positive": {
-    color: "$green500"
+    color: "$green500",
   },
 
   ".negative": {
-    color: "$red500"
+    color: "$red500",
   },
 
   thead: {
@@ -23,27 +23,27 @@ export const CryptosTableComponent = styled("table", {
       textAlign: "start",
       color: "$gray500",
       fontSize: "$sm",
-      fontWeight: "$regular"
+      fontWeight: "$regular",
     },
   },
 
   tbody: {
     tr: {
       height: "64px",
-  
+
       "&:nth-child(even)": {
         background: "$gray100",
       },
-  
+
       td: {
         paddingLeft: "$8",
         verticalAlign: "middle",
       },
-  
+
       img: {
         borderRadius: "$full",
         marginRight: "$4",
-        display: "inline-block"
+        display: "inline-block",
       },
 
       div: {
@@ -55,7 +55,7 @@ export const CryptosTableComponent = styled("table", {
         display: "inline-block",
         marginLeft: "$1",
         color: "$gray500",
-      }
-    }
-  }
+      },
+    },
+  },
 });

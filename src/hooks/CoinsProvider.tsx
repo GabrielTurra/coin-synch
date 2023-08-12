@@ -2,13 +2,13 @@ import React, { useState, useCallback, createContext, useContext } from "react";
 import { CoinProps } from "../@types/Coins";
 
 interface CoinsContextProps {
-	getCoins(quantity?: number): CoinProps[];
-	setCoins(coins: CoinProps[]): void;
+  getCoins(quantity?: number): CoinProps[];
+  setCoins(coins: CoinProps[]): void;
   coins: CoinProps[];
 }
 
 interface CoinsProviderProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const CoinsContext = createContext<CoinsContextProps>({} as CoinsContextProps);
@@ -20,15 +20,16 @@ export const CoinsProvider: React.FC<CoinsProviderProps> = ({ children }) => {
     setCoinsData(coinsToUpdate);
   }, []);
 
-  const getCoins = useCallback((quantity: number) => {
-    if(quantity) return coins.slice(0, quantity);
-    return coins;
-  }, [coins]);
+  const getCoins = useCallback(
+    (quantity: number) => {
+      if (quantity) return coins.slice(0, quantity);
+      return coins;
+    },
+    [coins],
+  );
 
   return (
-    <CoinsContext.Provider
-      value={{ setCoins,  getCoins, coins }}
-    >
+    <CoinsContext.Provider value={{ setCoins, getCoins, coins }}>
       {children}
     </CoinsContext.Provider>
   );

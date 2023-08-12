@@ -44,6 +44,7 @@ export const Col = styled("div", {
 
         flex: "0 0 0",
         maxWidth:"0%",
+        display: "none",
       },
       1: {
         all: "unset",

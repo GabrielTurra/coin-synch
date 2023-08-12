@@ -6,8 +6,8 @@ export const SignInFormComponent = styled("form", {
     border: "none",
 
     "> div": {
-      marginTop: "$4"
-    }, 
+      marginTop: "$4",
+    },
 
     a: {
       color: "$gray500",
@@ -19,10 +19,10 @@ export const SignInFormComponent = styled("form", {
       textDecoration: "none",
       transition: "all 0.3s ease",
 
-      "&:hover":{
-        color: "$primary"
+      "&:hover": {
+        color: "$primary",
       },
-    }
+    },
   },
 
   p: {
@@ -31,14 +31,14 @@ export const SignInFormComponent = styled("form", {
 
     strong: {
       cursor: "pointer",
-    }
+    },
   },
 
-  strong: {    
+  strong: {
     span: {
       color: "$primary",
-    }
-  }
+    },
+  },
 });
 
 export const Title = styled("h4", {
@@ -47,11 +47,11 @@ export const Title = styled("h4", {
 });
 
 export const ErrorMessage = styled("p", {
-  width: "100%", 
+  width: "100%",
   height: "5px",
   display: "block",
   marginBottom: "$6",
   color: "$red300 !important",
   fontSize: "$xs !important",
-  textAlign: "center"
+  textAlign: "center",
 });

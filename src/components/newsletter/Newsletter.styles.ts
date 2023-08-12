@@ -1,6 +1,5 @@
 import { Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
-import { TextInput } from "../lib";
 
 export const NewsletterComponent = styled("div", {
   padding: "$30 0",
@@ -20,7 +19,7 @@ export const WavyCurve = styled("img", {
 export const NewsletterRow = styled(Row, {
   justifyContent: "space-between",
   alignItems: "center",
-  
+
   "@lg": {
     justifyContent: "center",
   },
@@ -35,8 +34,8 @@ export const NewsletterRow = styled(Row, {
   },
 
   "> div": {
-    padding: "$4 0"
-  }
+    padding: "$4 0",
+  },
 });
 
 export const Category = styled("p", {
@@ -44,7 +43,7 @@ export const Category = styled("p", {
   fontSize: "$2xl",
   fontWeight: "$bold",
 });
-  
+
 export const Title = styled("h2", {
   fontWeight: "$bold",
   margin: "$1 0",
@@ -54,7 +53,7 @@ export const Title = styled("h2", {
     margin: "$2 0",
   },
 });
-  
+
 export const Description = styled("p", {
   fontSize: "$md",
   color: "$white",
