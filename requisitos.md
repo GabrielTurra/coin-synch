@@ -36,14 +36,10 @@
 [X] O bloco "My Wallet" deverá mostrar a lista com dados consumidos da API;
 [X] O botão "Add Crypto" deverá exibir o dialog "Add Crypto" com um select consumindo dados da API;
 [X] Ao clicar no botão "Add Crypto" a listagem no bloco "My Wallet" deverá ser atualizado;
-[ ] Ao clicar no ícone da listagem do bloco "My Wallet", deverá ser exibido o dialog de "Transfer Crypto";
-[ ] O Select de "Transfer" deverá listar as opções "Transfer in" e "Transfer out";
-[ ] Caso usuário transfira todo o valor da moeda selecionada, o item deverá ser removido da listagem do bloco "My Wallet";
+[X] Ao clicar no ícone da listagem do bloco "My Wallet", deverá ser exibido o dialog de "Transfer Crypto";
+[X] O Select de "Transfer" deverá listar as opções "Transfer in" e "Transfer out";
+[X] Caso usuário transfira todo o valor da moeda selecionada, o item deverá ser removido da listagem do bloco "My Wallet";
 [X] O campo "Quantity" não deverá ter valor negativo;
 [X] Ao remover todas as moedas da sua carteira, deverá ser exibida a mensagem de "Empty data" no bloco "My Wallet".
 
-
-
 [ ] colocar icone de logout
-[ ] fazer o select ficar com o tamanho total do input
-[ ] mudar arros do input number

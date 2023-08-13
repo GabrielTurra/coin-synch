@@ -16,6 +16,7 @@ export const DashboardContainer = styled("div", {
   height: "100%",
   margin: "0 auto",
   boxSizing: "border-box",
+  padding: "3% 0",
 
   "@lg": {
     padding: "3%",

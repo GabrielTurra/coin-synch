@@ -124,7 +124,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
         />
 
         {globalFormErros && <ErrorMessage>{globalFormErros}</ErrorMessage>}
-        <Button text="Add Crypto" sizeWidth="full" />
+        <Button text="Transfer Crypto" sizeWidth="full" />
       </fieldset>
     </TransferFormComponent>
   );

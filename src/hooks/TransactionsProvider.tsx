@@ -68,7 +68,6 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
           currentTransaction.quantity,
         );
 
-        // talvez o problema esteja aqui
         if (indexCoin >= 0) {
           accumulator[indexCoin].quantity += quantity;
           accumulator[indexCoin].holdings += costTransaction;
@@ -85,7 +84,7 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
       [] as WalletProps[],
     );
 
-    return userWallet.filter((item) => item.holdings > 0);
+    return userWallet.filter((item) => item.holdings >= 1);
   }, [transactions]);
 
   const getHoldingValue = (type: string, value: number) => {

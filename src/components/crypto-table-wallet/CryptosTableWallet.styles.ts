@@ -5,6 +5,12 @@ export const CryptosTableWalletComponent = styled("table", {
   textAlign: "start",
   borderCollapse: "collapse",
 
+  display: "none",
+
+  "@md": {
+    display: "table",
+  },
+
   ".positive": {
     color: "$green500",
   },
@@ -58,15 +64,6 @@ export const CryptosTableWalletComponent = styled("table", {
       },
     },
   },
-});
-
-export const Title = styled("h5", {
-  fontSize: "$xl",
-  margin: "$2 0",
-});
-
-export const Description = styled("p", {
-  fontSize: "$sm",
 });
 
 export const HoldingContent = styled("div", {

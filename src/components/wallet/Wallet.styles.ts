@@ -2,8 +2,12 @@ import { Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
 
 export const WalletComponent = styled("div", {
-  background: "$white",
   borderRadius: "$md",
+
+  "@md": {
+    background: "$white",
+    boxShadow: "0px 8px 16px 0px rgba(0, 0, 0, 0.10)",
+  },
 });
 
 export const WalletHeader = styled(Row, {
@@ -25,4 +29,13 @@ export const WalletHeader = styled(Row, {
 export const WalletBody = styled("div", {
   textAlign: "center",
   padding: "$8 0",
+});
+
+export const Title = styled("h5", {
+  fontSize: "$xl",
+  margin: "$2 0",
+});
+
+export const Description = styled("p", {
+  fontSize: "$sm",
 });

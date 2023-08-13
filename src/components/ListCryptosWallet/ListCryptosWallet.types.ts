@@ -1,5 +1,4 @@
 import { WalletProps } from "@/src/@types/Wallet";
 
-export interface CryptosTableWalletProps {
+export interface ListCryptosWalletProps {
   walletData: WalletProps[];
-}
