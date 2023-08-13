@@ -90,3 +90,10 @@ export const CoinContent = styled("div", {
     },
   },
 });
+
+export const Separator = styled("div", {
+  height: "1px",
+  width: "100%",
+  background: "$gray100",
+  marginTop: "$4",
+});

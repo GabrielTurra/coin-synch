@@ -13,6 +13,7 @@ import {
   Title,
   CoinSection,
   CoinContent,
+  Separator,
 } from "./TransferForm.styles";
 import { TransferFormProps } from "./TransferForm.types";
 import { api } from "@/src/lib/axios";
@@ -91,6 +92,7 @@ export const TransferForm: React.FC<TransferFormProps> = ({
     <TransferFormComponent onSubmit={handleSubmit(handleAddCrypto)}>
       <Title>Transfer Crypto</Title>
 
+      <Separator />
       <CoinSection>
         <span>You are transfering</span>
 

@@ -12,7 +12,7 @@ import Image from "next/image";
 
 import ChevronDown from "@/public/icons/chevron-down.svg";
 import { Container } from "@/src/styles/grid";
-import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
+import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 
 export const AccordionCryptos: React.FC<AccordionCryptosProps> = ({
   coins,

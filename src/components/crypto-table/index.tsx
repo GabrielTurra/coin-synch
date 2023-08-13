@@ -3,7 +3,7 @@ import { CryptosTableComponent } from "./CryptosTable.styles";
 import { CryptosTableProps } from "./CryptosTable.types";
 import { Button } from "../lib";
 import Image from "next/image";
-import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
+import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 
 export const CryptosTable: React.FC<CryptosTableProps> = ({ coins }) => {
   return (

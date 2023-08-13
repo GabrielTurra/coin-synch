@@ -14,7 +14,7 @@ import PlusIcon from "@/public/icons/plus.svg";
 import Image from "next/image";
 import { AddCryptoForm } from "../add-crypto-form";
 import { CryptosTableWallet } from "../crypto-table-wallet";
-import { ListCryptosWallet } from "../ListCryptosWallet";
+import { ListCryptosWallet } from "../list-cryptos-wallet";
 import { useTransactions } from "@/src/hooks/TransactionsProvider";
 import EmptyWalletIcon from "@/public/icons/empty-wallet.svg";
 

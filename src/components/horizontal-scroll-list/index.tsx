@@ -6,7 +6,7 @@ import {
 } from "./HorizontalScrollList.styles";
 import { HorizontalScrollListProps } from "./HorizontalScrollList.types";
 import { CoinProps } from "@/src/@types/Coins";
-import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
+import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 
 export const HorizontalScrollList: React.FC<HorizontalScrollListProps> = ({
   coins,

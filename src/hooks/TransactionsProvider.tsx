@@ -15,6 +15,7 @@ interface TransactionsContextProps {
   transactions: TransactionProps[];
   appendTransaction: (transaction: TransactionProps) => void;
   getWallet: () => WalletProps[];
+  getBalance: () => number;
 }
 
 interface TransactionsProviderProps {
@@ -87,6 +88,15 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
     return userWallet.filter((item) => item.holdings >= 1);
   }, [transactions]);
 
+  const getBalance = useCallback(() => {
+    const balance = getWallet().reduce(
+      (acc, walletItem) => acc + walletItem.holdings,
+      0,
+    );
+
+    return balance;
+  }, [transactions]);
+
   const getHoldingValue = (type: string, value: number) => {
     if (type === "TRANSFER_OUT") {
       return Math.abs(value) * -1;
@@ -101,6 +111,7 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
         transactions,
         appendTransaction,
         getWallet,
+        getBalance,
       }}
     >
       {children}

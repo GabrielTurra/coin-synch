@@ -31,7 +31,7 @@
 [X] O topo também deverá ter um dropdown com uma única opção (Logout);
 [X] Menu lateral com tooltip deverá ter as funções de expandir e minimizar;
 [X] Conteúdo deve ser exibido com os dados consumidos da API;
-[ ] O valor exibido no bloco "Balance in US$" deverá ser formatado;
+[X] O valor exibido no bloco "Balance in US$" deverá ser formatado;
 [ ] O bloco "Daily Variation" deverá mostrar um gráfico com dados consumidos da API;
 [X] O bloco "My Wallet" deverá mostrar a lista com dados consumidos da API;
 [X] O botão "Add Crypto" deverá exibir o dialog "Add Crypto" com um select consumindo dados da API;

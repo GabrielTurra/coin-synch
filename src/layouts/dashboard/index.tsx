@@ -1,3 +1,4 @@
+import { BalanceSection } from "@/src/components/balance-section";
 import {
   DashboardComponent,
   DashboardContainer,
@@ -11,6 +12,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = () => {
     <DashboardComponent>
       <DashboardContent>
         <DashboardContainer>
+          <BalanceSection />
           <Wallet />
         </DashboardContainer>
       </DashboardContent>

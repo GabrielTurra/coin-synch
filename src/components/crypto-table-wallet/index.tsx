@@ -6,7 +6,7 @@ import {
 import { CryptosTableWalletProps } from "./CryptosTableWallet.types";
 import Image from "next/image";
 import TradeIcon from "@/public/icons/trade.svg";
-import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
+import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 import { Modal, Tooltip } from "@/src/components/lib";
 import { TransferForm } from "../transfer-form";
 import { CoinProps } from "@/src/@types/Coins";

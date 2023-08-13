@@ -22,7 +22,11 @@ export const DashboardContainer = styled("div", {
     padding: "3%",
     paddingLeft: "calc(3% + 86px)",
     width: "100%",
-    maxWidth: "1216px",
+    maxWidth: "1340px",
     margin: "0 auto",
+  },
+
+  "@xxl": {
+    paddingLeft: "3%",
   },
 });

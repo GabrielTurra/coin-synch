@@ -84,3 +84,17 @@ export const Separator = styled("div", {
   background: "$gray100",
   margin: "$2 0",
 });
+
+export const ShowMore = styled("span", {
+  display: "block",
+  color: "$primary",
+  padding: "$8",
+  width: "100px",
+  margin: "0 auto",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+
+  "&:hover": {
+    color: "$orange700",
+  },
+});
