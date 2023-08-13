@@ -23,7 +23,7 @@ export const CollapsibleNavigationComponent = styled("div", {
     left: 0,
 
     paddingTop: "64px",
-    height: "calc(100vh - 128px)",
+    height: "calc(100vh - 192px)",
     top: "64px",
   },
 

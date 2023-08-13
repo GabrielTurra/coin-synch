@@ -13,9 +13,14 @@ export const Overlay = styled(Dialog.Overlay, {
 
 export const Content = styled(Dialog.Content, {
   maxHeight: "80vh",
-  maxWidth: "448px",
+  maxWidth: "90%",
   width: "100%",
   padding: "$8",
+  boxSizing: "border-box",
+
+  "@sm": {
+    maxWidth: "450px",
+  },
 
   overflowY: "auto",
   zIndex: "11",

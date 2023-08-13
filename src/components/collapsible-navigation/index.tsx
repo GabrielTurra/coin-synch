@@ -8,7 +8,7 @@ import { CollapsibleNavigationProps } from "./CollapsibleNavigation.types";
 import BitImage from "@/public/icons/bit.svg";
 import ChartImage from "@/public/icons/chart.svg";
 import CryptoImage from "@/public/icons/crypto.svg";
-import Wallet from "@/public/icons/wallet.svg";
+import Wallet from "@/public/icons/bit-wallet.svg";
 import { NavigationItem } from "./NavigationItem";
 import { useCollapsiblenavigation } from "@/src/hooks/CollapsibleNavigation";
 

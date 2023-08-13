@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum TRANSACTION_TYPE {
+  TRANSFER_IN
+  TRANSFER_OUT
+}
+
 model Newsletter {
   id         String   @id @default(uuid())
   email      String   @unique
@@ -24,7 +29,22 @@ model User {
   email         String @unique
   password_hash String
 
-  created_at DateTime @default(now())
+  created_at   DateTime      @default(now())
+  Transactions Transaction[]
 
   @@map("users")
+}
+
+model Transaction {
+  id        String           @id @default(uuid())
+  type      TRANSACTION_TYPE
+  crypto_id String
+  quantity  Int
+
+  created_at DateTime @default(now())
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  @@map("transactions")
 }
