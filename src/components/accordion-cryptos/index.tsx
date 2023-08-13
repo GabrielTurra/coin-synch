@@ -12,6 +12,7 @@ import Image from "next/image";
 
 import ChevronDown from "@/public/icons/chevron-down.svg";
 import { Container } from "@/src/styles/grid";
+import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
 
 export const AccordionCryptos: React.FC<AccordionCryptosProps> = ({
   coins,
@@ -41,7 +42,7 @@ export const AccordionCryptos: React.FC<AccordionCryptosProps> = ({
                 <Container>
                   <ContentItem>
                     <p>Price</p>
-                    US {coin.price_usd}
+                    US {convertToDolarFormat(coin.price_usd)}
                   </ContentItem>
                   <ContentItem>
                     <p>Change</p>

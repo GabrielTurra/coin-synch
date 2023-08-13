@@ -3,6 +3,7 @@ import { CryptosTableComponent } from "./CryptosTable.styles";
 import { CryptosTableProps } from "./CryptosTable.types";
 import { Button } from "../lib";
 import Image from "next/image";
+import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
 
 export const CryptosTable: React.FC<CryptosTableProps> = ({ coins }) => {
   return (
@@ -27,7 +28,7 @@ export const CryptosTable: React.FC<CryptosTableProps> = ({ coins }) => {
                 <span>{coin.acronym}</span>
               </div>
             </td>
-            <td>US {coin.price_usd}</td>
+            <td>US {convertToDolarFormat(coin.price_usd)}</td>
             {Number(coin.variation) > 0 ? (
               <td className="positive">+{coin.variation}%</td>
             ) : (

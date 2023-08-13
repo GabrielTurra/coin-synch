@@ -11,7 +11,7 @@ import {
   Title,
 } from "./Hero.styles";
 import { HeroProps } from "./Hero.types";
-import { Button } from "../lib";
+import { Button, Modal } from "../lib";
 import { Col } from "@/src/styles/grid";
 import { A11y } from "swiper/modules";
 import { Swiper } from "swiper/react";
@@ -21,6 +21,7 @@ import HeroImage from "@/public/banner.png";
 import Image from "next/image";
 
 import "swiper/css";
+import { SignUpForm } from "../sign-up-form";
 
 export const Hero: React.FC<HeroProps> = () => {
   return (
@@ -42,7 +43,18 @@ export const Hero: React.FC<HeroProps> = () => {
               urna, porttitor
             </Description>
 
-            <Button text="Sign up now" sizeWidth="big" icon={RightArrowIcon} />
+            <Modal.Root>
+              <Modal.Trigger asChild>
+                <Button
+                  text="Sign up now"
+                  sizeWidth="big"
+                  icon={RightArrowIcon}
+                />
+              </Modal.Trigger>
+              <Modal.Content>
+                <SignUpForm />
+              </Modal.Content>
+            </Modal.Root>
 
             <TagsRow>
               <Tag>Cryptos</Tag>

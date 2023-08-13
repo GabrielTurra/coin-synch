@@ -10,7 +10,7 @@ import {
 } from "./CardsSection.styles";
 import { CardsSectionProps } from "./CardsSection.types";
 import { Col } from "@/src/styles/grid";
-import { Button } from "../lib";
+import { Button, Modal } from "../lib";
 import { Card } from "../card";
 
 import BitImage from "@/public/icons/bit.svg";
@@ -18,6 +18,7 @@ import ChartImage from "@/public/icons/chart.svg";
 import CryptoImage from "@/public/icons/crypto.svg";
 import PcImage from "@/public/icons/computer.svg";
 import { CardProps } from "../card/Card.types";
+import { SignUpForm } from "../sign-up-form";
 
 const mockedCards = [
   {
@@ -82,7 +83,14 @@ export const CardsSection: React.FC<CardsSectionProps> = () => {
               aliquam, purus sit amet luctus venenatis, lectus magna fringilla
               urna, porttitor{" "}
             </Description>
-            <Button text="Sign up now" />
+            <Modal.Root>
+              <Modal.Trigger asChild>
+                <Button text="Sign up now" />
+              </Modal.Trigger>
+              <Modal.Content>
+                <SignUpForm />
+              </Modal.Content>
+            </Modal.Root>
           </Col>
         </SectionRow>
       </SectionContainer>
