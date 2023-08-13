@@ -4,9 +4,14 @@ import * as TooltipBase from "./Tooltip.styles";
 import { TooltipContentProps } from "./Tooltip.types";
 
 export const Content = React.forwardRef<HTMLDivElement, TooltipContentProps>(
-  ({ side, text, ...props }, forwardedRef) => {
+  ({ side, size, text, ...props }, forwardedRef) => {
     return (
-      <TooltipBase.Content side={side} {...props} ref={forwardedRef}>
+      <TooltipBase.Content
+        size={size}
+        side={side}
+        {...props}
+        ref={forwardedRef}
+      >
         {text}
         <TooltipPrimitive.Arrow
           width={16}

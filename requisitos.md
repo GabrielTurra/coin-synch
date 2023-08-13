@@ -26,21 +26,24 @@
 [ ] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
 
 #Dashboard:
-[ ] colocar icone de logout
-[ ] fazer o select ficar com o tamanho total do input
-[ ] mudar arros do input number
 
 [X] O topo da página deverá ter as informações do usuário (Avatar e Nome, esses dados deverão ser consumidos da API Rest)
 [X] O topo também deverá ter um dropdown com uma única opção (Logout);
 [X] Menu lateral com tooltip deverá ter as funções de expandir e minimizar;
-[ ] Conteúdo deve ser exibido com os dados consumidos da API;
+[X] Conteúdo deve ser exibido com os dados consumidos da API;
 [ ] O valor exibido no bloco "Balance in US$" deverá ser formatado;
 [ ] O bloco "Daily Variation" deverá mostrar um gráfico com dados consumidos da API;
-[ ] O bloco "My Wallet" deverá mostrar a lista com dados consumidos da API;
-[ ] O botão "Add Crypto" deverá exibir o dialog "Add Crypto" com um select consumindo dados da API;
-[ ] Ao clicar no botão "Add Crypto" a listagem no bloco "My Wallet" deverá ser atualizado;
+[X] O bloco "My Wallet" deverá mostrar a lista com dados consumidos da API;
+[X] O botão "Add Crypto" deverá exibir o dialog "Add Crypto" com um select consumindo dados da API;
+[X] Ao clicar no botão "Add Crypto" a listagem no bloco "My Wallet" deverá ser atualizado;
 [ ] Ao clicar no ícone da listagem do bloco "My Wallet", deverá ser exibido o dialog de "Transfer Crypto";
 [ ] O Select de "Transfer" deverá listar as opções "Transfer in" e "Transfer out";
 [ ] Caso usuário transfira todo o valor da moeda selecionada, o item deverá ser removido da listagem do bloco "My Wallet";
-[ ] O campo "Quantity" não deverá ter valor negativo;
-[ ] Ao remover todas as moedas da sua carteira, deverá ser exibida a mensagem de "Empty data" no bloco "My Wallet".
+[X] O campo "Quantity" não deverá ter valor negativo;
+[X] Ao remover todas as moedas da sua carteira, deverá ser exibida a mensagem de "Empty data" no bloco "My Wallet".
+
+
+
+[ ] colocar icone de logout
+[ ] fazer o select ficar com o tamanho total do input
+[ ] mudar arros do input number

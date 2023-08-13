@@ -77,4 +77,16 @@ export const Content = styled(Tooltip.Content, {
   "&[data-state='delayed-open'][data-side='left']": {
     animationName: `${slideLeftAndFade}`,
   },
+
+  variants: {
+    size: {
+      small: {
+        fontSize: "$sm",
+        padding: "$2 $4",
+        maxWidth: "100px",
+        boxSizing: "border-box",
+        textAlign: "center",
+      },
+    },
+  },
 });

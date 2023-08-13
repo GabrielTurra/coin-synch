@@ -6,6 +6,7 @@ import {
 } from "./HorizontalScrollList.styles";
 import { HorizontalScrollListProps } from "./HorizontalScrollList.types";
 import { CoinProps } from "@/src/@types/Coins";
+import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
 
 export const HorizontalScrollList: React.FC<HorizontalScrollListProps> = ({
   coins,
@@ -17,7 +18,9 @@ export const HorizontalScrollList: React.FC<HorizontalScrollListProps> = ({
           {coins.map((item: CoinProps, index) => (
             <span className="content" key={index}>
               <span className="title">{item.acronym}</span>
-              <span className="value">{item.price_usd}</span>
+              <span className="value">
+                {convertToDolarFormat(item.price_usd)}
+              </span>
               {Number(item.variation) > 0 ? (
                 <span className="positive_variation">+{item.variation}</span>
               ) : (
@@ -30,7 +33,9 @@ export const HorizontalScrollList: React.FC<HorizontalScrollListProps> = ({
           {coins.map((item: CoinProps, index) => (
             <span className="content" key={index}>
               <span className="title">{item.acronym}</span>
-              <span className="value">{item.price_usd}</span>
+              <span className="value">
+                {convertToDolarFormat(item.price_usd)}
+              </span>
               {Number(item.variation) ? (
                 <span className="positive_variation">+{item.variation}</span>
               ) : (

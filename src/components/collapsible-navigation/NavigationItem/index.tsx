@@ -4,7 +4,7 @@ import {
   NavigationContent,
 } from "../CollapsibleNavigation.styles";
 import Image from "next/image";
-import * as Tooltip from "../../lib/tooltip";
+import { Tooltip } from "../../lib";
 
 export const NavigationItem: React.FC<NavigationItemProps> = ({ icon }) => {
   return (

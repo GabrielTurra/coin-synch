@@ -27,7 +27,6 @@ const Dashboard = ({ ...props }: RouteProps) => {
   const { status } = useSession();
 
   if (status === "unauthenticated") router.push("/");
-
   controlCoins.setCoins(props.coins);
 
   return <DashboardLayout />;

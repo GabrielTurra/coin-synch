@@ -15,6 +15,7 @@ import {
 import { AddCryptoFormProps } from "./AddCryptoForm.types";
 import { useCoins } from "@/src/hooks/CoinsProvider";
 import { api } from "@/src/lib/axios";
+import { useTransactions } from "@/src/hooks/TransactionsProvider";
 
 const addCryptoFormSchema = z.object({
   select: z.string(),
@@ -35,6 +36,7 @@ export const AddCryptoForm: React.FC<AddCryptoFormProps> = ({
 }) => {
   const [globalFormErros, setGlobalFormErros] = useState("");
   const controlCoins = useCoins();
+  const controlTransactions = useTransactions();
   const session = useSession();
 
   const {
@@ -50,6 +52,12 @@ export const AddCryptoForm: React.FC<AddCryptoFormProps> = ({
     try {
       await api.post("/transactions/create", {
         user_id: session.data?.user.id,
+        crypto_id: data.select,
+        quantity: data.value,
+        type: "TRANSFER_IN",
+      });
+
+      controlTransactions.appendTransaction({
         crypto_id: data.select,
         quantity: data.value,
         type: "TRANSFER_IN",
