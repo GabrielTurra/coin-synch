@@ -57,6 +57,7 @@ export const DisplayItem = styled("div", {
   padding: "$3 $8",
   borderRadius: "$sm",
   cursor: "pointer",
+  borderBottom: "1px solid $gray100",
 
   "&:hover": {
     outline: "none",

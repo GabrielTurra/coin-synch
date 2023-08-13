@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CryptosTableWalletComponent,
   Description,
@@ -11,11 +11,15 @@ import { useTransactions } from "@/src/hooks/TransactionsProvider";
 import EmptyWalletIcon from "@/public/icons/empty-wallet.svg";
 import TradeIcon from "@/public/icons/trade.svg";
 import { convertToDolarFormat } from "@/src/utils/toDolarFormat";
-import { Tooltip } from "@/src/components/lib";
+import { Modal, Tooltip } from "@/src/components/lib";
+import { TransferForm } from "../transfer-form";
+import { CoinProps } from "@/src/@types/Coins";
 
 export const CryptosTableWallet: React.FC<CryptosTableWalletProps> = () => {
   const controlTransactions = useTransactions();
   const wallet = controlTransactions.getWallet();
+  const [transferModalIsOpen, setTransferModalIsOpen] = useState(false);
+  const [modalCoin, setModalCoin] = useState({} as CoinProps);
 
   if (!wallet || wallet.length <= 0) {
     return (
@@ -27,8 +31,25 @@ export const CryptosTableWallet: React.FC<CryptosTableWalletProps> = () => {
     );
   }
 
+  const openTransferModal = (coin: CoinProps) => {
+    setModalCoin(coin);
+    setTransferModalIsOpen(true);
+  };
+
   return (
     <CryptosTableWalletComponent>
+      <Modal.Root
+        open={transferModalIsOpen}
+        onOpenChange={setTransferModalIsOpen}
+      >
+        <Modal.Trigger asChild></Modal.Trigger>
+        <Modal.Content>
+          <TransferForm
+            coin={modalCoin}
+            modalController={setTransferModalIsOpen}
+          />
+        </Modal.Content>
+      </Modal.Root>
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -77,6 +98,7 @@ export const CryptosTableWallet: React.FC<CryptosTableWalletProps> = () => {
                         width={16}
                         height={16}
                         alt=""
+                        onClick={() => openTransferModal(transaction.coin)}
                       />
                     </Tooltip.Trigger>
                     <Tooltip.Content

@@ -60,7 +60,7 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
 
         const costTransaction = getHoldingValue(
           currentTransaction.type,
-          Number(currentTransaction.quantity) * Number(coin.price_usd),
+          currentTransaction.quantity * coin.price_usd,
         );
 
         const quantity = getHoldingValue(
@@ -68,9 +68,10 @@ export const TransactionsProvider: React.FC<TransactionsProviderProps> = ({
           currentTransaction.quantity,
         );
 
+        // talvez o problema esteja aqui
         if (indexCoin >= 0) {
-          accumulator[indexCoin].quantity += currentTransaction.quantity;
-          accumulator[indexCoin].holdings += quantity;
+          accumulator[indexCoin].quantity += quantity;
+          accumulator[indexCoin].holdings += costTransaction;
         } else {
           accumulator.push({
             coin,
