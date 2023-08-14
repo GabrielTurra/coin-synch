@@ -6,4 +6,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "white" | "green";
   sizeWidth?: "small" | "big" | "full";
   icon?: StaticImageData;
+  onlyIcon?: boolean;
 }

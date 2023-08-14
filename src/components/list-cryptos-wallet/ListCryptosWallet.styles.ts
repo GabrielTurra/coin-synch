@@ -3,7 +3,7 @@ import { styled } from "@/stitches.config";
 export const ListCryptosWalletComponent = styled("div", {
   "> div": {
     justifyContent: "center",
-    gap: "32px",
+    gap: "16px",
   },
 
   display: "block",

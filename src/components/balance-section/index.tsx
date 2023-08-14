@@ -4,6 +4,8 @@ import {
   BalanceRow,
   BalanceSectionComponent,
   BalanceValue,
+  CoinContainer,
+  CoinInfoVariation,
   IconContainer,
   ImageNews,
   NewsContainer,
@@ -17,9 +19,12 @@ import BalanceIcon from "@/public/icons/balance.svg";
 import ElephantImage from "@/public/Eduphants.svg";
 import { useTransactions } from "@/src/hooks/TransactionsProvider";
 import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
+import { Chart } from "./chart";
+import { useCoins } from "@/src/hooks/CoinsProvider";
 
 export const BalanceSection: React.FC<BalanceSectionProps> = () => {
   const controlTransactions = useTransactions();
+  const ethData = useCoins().findCoin("ETH");
 
   return (
     <BalanceSectionComponent>
@@ -45,7 +50,44 @@ export const BalanceSection: React.FC<BalanceSectionProps> = () => {
             </BalanceValue>
           </Row>
         </Col>
-        <Col></Col>
+        <Col>
+          <Row>
+            <CoinContainer
+              size={{
+                "@initial": 12,
+                "@md": 5,
+              }}
+            >
+              <span>Daily Variation</span>
+              <CoinInfoVariation>
+                <div>
+                  <Image
+                    src={ethData?.image || ""}
+                    height={24}
+                    width={24}
+                    alt=""
+                  />
+                  {ethData?.acronym}
+                </div>
+                <div
+                  className={
+                    Number(ethData?.variation) > 0 ? "positive" : "negative"
+                  }
+                >
+                  {ethData?.variation}%
+                </div>
+              </CoinInfoVariation>
+            </CoinContainer>
+            <Col
+              size={{
+                "@initial": 12,
+                "@md": 7,
+              }}
+            >
+              <Chart />
+            </Col>
+          </Row>
+        </Col>
         <NewsSection>
           <Row>
             <NewsContainer

@@ -13,8 +13,12 @@ export const WalletComponent = styled("div", {
 export const WalletHeader = styled(Row, {
   justifyContent: "space-between",
   borderBottom: "1px solid $gray100",
-  padding: "$8",
+  padding: "$4 $6",
   boxSizing: "border-box",
+
+  "@xs": {
+    padding: "$8",
+  },
 
   "> div": {
     display: "flex",
@@ -28,7 +32,7 @@ export const WalletHeader = styled(Row, {
 
 export const WalletBody = styled("div", {
   textAlign: "center",
-  padding: "$8 0",
+  padding: "$10 0",
 });
 
 export const Title = styled("h5", {

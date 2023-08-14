@@ -2,11 +2,11 @@ import { Col, Row } from "@/src/styles/grid";
 import { styled } from "@/stitches.config";
 
 export const BalanceSectionComponent = styled("div", {
-  marginBottom: "$8",
+  marginBottom: "$3",
 });
 
 export const BalanceRow = styled(Row, {
-  gap: "32px",
+  gap: "16px",
 
   "> div": {
     boxShadow: "0px 4px 8px 0px rgba(0, 0, 0, 0.10)",
@@ -77,6 +77,51 @@ export const NewsContainer = styled(Col, {
   a: {
     fontSize: "$xs",
     color: "$primary",
+  },
+});
+
+export const CoinInfoVariation = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  padding: "5px 0",
+
+  div: {
+    display: "flex",
+    alignItems: "center",
+    margin: "$2 0",
+    fontSize: "$sm",
+
+    "&.positive, &.negative": {
+      marginLeft: "5px",
+    },
+  },
+
+  "@md": {
+    display: "unset",
+
+    ".positive, .negative": {
+      marginLeft: "0",
+    },
+  },
+});
+
+export const CoinContainer = styled(Col, {
+  padding: "$4 !important",
+  boxSizing: "border-box !important",
+
+  span: {
+    fontSize: "$xs",
+    color: "$gray500",
+  },
+
+  ".positive": {
+    color: "$green500",
+    fontSize: "$md",
+  },
+
+  ".negative": {
+    color: "$red500",
+    fontSize: "$md",
   },
 });
 

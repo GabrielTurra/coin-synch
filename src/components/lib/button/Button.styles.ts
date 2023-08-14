@@ -3,6 +3,18 @@ import Image from "next/image";
 
 export const Icon = styled(Image, {
   marginLeft: "$2",
+
+  variants: {
+    onlyIcon: {
+      true: {
+        marginLeft: "0",
+
+        "@sm": {
+          marginLeft: "$2",
+        },
+      },
+    },
+  },
 });
 
 export const ButtonComponent = styled("button", {
@@ -20,6 +32,10 @@ export const ButtonComponent = styled("button", {
   textAlign: "center",
   display: "static",
 
+  span: {
+    marginLeft: "0 !important",
+  },
+
   "&:hover": {
     background: "$orange700",
   },
@@ -34,7 +50,9 @@ export const ButtonComponent = styled("button", {
     color: {
       white: {
         background: "$white",
-        color: "$textBase",
+        span: {
+          color: "$textBase !important",
+        },
 
         "&:hover": {
           background: "$gray300",
@@ -42,7 +60,9 @@ export const ButtonComponent = styled("button", {
       },
       green: {
         background: "$green700",
-        color: "$white",
+        span: {
+          color: "$white !important",
+        },
 
         "&:hover": {
           background: "$green900",
@@ -67,6 +87,39 @@ export const ButtonComponent = styled("button", {
         padding: "$3 $6",
         fontSize: "$md",
         width: "100%",
+      },
+    },
+    onlyIcon: {
+      true: {
+        width: "30px",
+        height: "30px",
+
+        minHeight: "auto",
+        minWidth: "auto",
+
+        padding: "0",
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+
+        span: {
+          display: "none",
+        },
+
+        "@sm": {
+          width: "auto",
+          height: "auto",
+
+          padding: "10px $6",
+
+          minWidth: "128px",
+          display: "flex",
+          alignItems: "center",
+
+          span: {
+            display: "block",
+          },
+        },
       },
     },
   },

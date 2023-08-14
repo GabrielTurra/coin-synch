@@ -36,6 +36,7 @@ export const Wallet: React.FC<WalletProps> = () => {
               icon={PlusIcon}
               text="Add Crypto"
               sizeWidth="small"
+              onlyIcon
             ></Button>
           </Modal.Trigger>
           <Modal.Content>
