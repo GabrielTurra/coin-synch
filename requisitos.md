@@ -1,7 +1,7 @@
 # Landing page:
 [X] Os dados das crypto moedas no topo da página deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
 [X] O Banner do topo deverá ser em forma de carrossel (Mais detalhes no figma)
-[ ] O Banner do topo deverá mudar a imagem quando o usuario descer a página
+[X] O Banner do topo deverá mudar a imagem quando o usuario descer a página
 
 ## Top Cryptos
 [X] Os dados das crypto moedas na seção de "Top Cryptos" deverão ser carregados da API Rest (SUGESTÃO: https://www.coinapi.io/)
@@ -23,7 +23,7 @@
 [X] Os campos "Name", "Email", "Password", "Confirm Password" e o checkbox "I have read and accept the Privacy Policy and Terms of User Sign up." deverão ser obrigatórios;
 [X] O input de e-mail deverá ser validado (e-mail válido)
 [X] Os inputs Passwords e Confirm Password deverão ser iguais para se tornarem válidos;
-[ ] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
+[X] Ao clicar no link "Already have and account? Sign in to CoinSynch" a aplicação deverá abrir o Dialog de "Sign in" no lugar do "Sign Up";
 
 #Dashboard:
 
@@ -32,7 +32,6 @@
 [X] Menu lateral com tooltip deverá ter as funções de expandir e minimizar;
 [X] Conteúdo deve ser exibido com os dados consumidos da API;
 [X] O valor exibido no bloco "Balance in US$" deverá ser formatado;
-[ ] O bloco "Daily Variation" deverá mostrar um gráfico com dados consumidos da API;
 [X] O bloco "My Wallet" deverá mostrar a lista com dados consumidos da API;
 [X] O botão "Add Crypto" deverá exibir o dialog "Add Crypto" com um select consumindo dados da API;
 [X] Ao clicar no botão "Add Crypto" a listagem no bloco "My Wallet" deverá ser atualizado;
@@ -41,3 +40,4 @@
 [X] Caso usuário transfira todo o valor da moeda selecionada, o item deverá ser removido da listagem do bloco "My Wallet";
 [X] O campo "Quantity" não deverá ter valor negativo;
 [X] Ao remover todas as moedas da sua carteira, deverá ser exibida a mensagem de "Empty data" no bloco "My Wallet".
+[-] O bloco "Daily Variation" deverá mostrar um gráfico com dados consumidos da API;

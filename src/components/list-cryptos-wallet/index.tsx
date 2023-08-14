@@ -14,6 +14,7 @@ import { Col, Row } from "@/src/styles/grid";
 import { Button, Modal } from "../lib";
 import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 import { TransferForm } from "../transfer-form";
+import { formatPercentage } from "@/src/utils/formatPercentage";
 
 export const ListCryptosWallet: React.FC<ListCryptosWalletProps> = ({
   walletData,
@@ -73,11 +74,11 @@ export const ListCryptosWallet: React.FC<ListCryptosWalletProps> = ({
                     <span>Change</span>
                     {Number(walletItem.coin?.variation) > 0 ? (
                       <div className="positive">
-                        +{walletItem.coin?.variation}%
+                        {formatPercentage(walletItem.coin?.variation)}
                       </div>
                     ) : (
                       <div className="negative">
-                        {walletItem.coin?.variation}%
+                        {formatPercentage(walletItem.coin?.variation)}
                       </div>
                     )}
                   </div>

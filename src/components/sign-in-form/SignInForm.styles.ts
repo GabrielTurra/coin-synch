@@ -24,19 +24,30 @@ export const SignInFormComponent = styled("form", {
       },
     },
   },
+});
 
-  p: {
-    textAlign: "center",
-    marginTop: "$4",
+export const ChangeForm = styled("p", {
+  textAlign: "center",
+  marginTop: "$4",
+  fontSize: "$sm",
+  color: "$gray500",
 
-    strong: {
-      cursor: "pointer",
-    },
+  span: {
+    color: "$primary",
   },
 
-  strong: {
-    span: {
-      color: "$primary",
+  button: {
+    borderRadius: "$md",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    color: "$textBase",
+    fontWeight: "$bold",
+    transition: "all 0.2s ease",
+    padding: "$2 5px",
+
+    "&:hover": {
+      background: "$orange100",
     },
   },
 });
@@ -44,6 +55,12 @@ export const SignInFormComponent = styled("form", {
 export const Title = styled("h4", {
   fontWeight: "$regular",
   textAlign: "center",
+
+  strong: {
+    span: {
+      color: "$primary",
+    },
+  },
 });
 
 export const ErrorMessage = styled("p", {

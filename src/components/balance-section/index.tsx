@@ -21,6 +21,7 @@ import { useTransactions } from "@/src/hooks/TransactionsProvider";
 import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 import { Chart } from "./chart";
 import { useCoins } from "@/src/hooks/CoinsProvider";
+import { formatPercentage } from "@/src/utils/formatPercentage";
 
 export const BalanceSection: React.FC<BalanceSectionProps> = () => {
   const controlTransactions = useTransactions();
@@ -74,7 +75,7 @@ export const BalanceSection: React.FC<BalanceSectionProps> = () => {
                     Number(ethData?.variation) > 0 ? "positive" : "negative"
                   }
                 >
-                  {ethData?.variation}%
+                  {formatPercentage(ethData?.variation || 0)}
                 </div>
               </CoinInfoVariation>
             </CoinContainer>
@@ -98,7 +99,12 @@ export const BalanceSection: React.FC<BalanceSectionProps> = () => {
             >
               <label>NFT’s NEWS</label>
               <span>New ElephantX NFT to be lauched!</span>
-              <a href="#">Read more +</a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/gabriel-t-06a98b156/"
+              >
+                Read more +
+              </a>
             </NewsContainer>
             <ImageNews
               size={{

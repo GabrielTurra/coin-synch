@@ -17,9 +17,20 @@ import {
   UserComponent,
   ListMenu,
 } from "../Header.styles";
+import { useState } from "react";
 
 export const SignSection: React.FC<SignSectionProps> = () => {
   const { data, status } = useSession();
+  const [openSignUp, setOpenSignUp] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
+
+  function handleOpenSignUp() {
+    setOpenSignUp(true);
+  }
+
+  function handleOpenSignIn() {
+    setOpenSignIn(true);
+  }
 
   if (status === "authenticated") {
     return (
@@ -49,20 +60,21 @@ export const SignSection: React.FC<SignSectionProps> = () => {
 
   return (
     <SignSectionComponent>
-      <Modal.Root>
+      <Modal.Root onOpenChange={setOpenSignIn} open={openSignIn}>
         <Modal.Trigger asChild>
           <Button text="Sign in" sizeWidth="small" color="white" />
         </Modal.Trigger>
         <Modal.Content>
-          <SignInForm />
+          <SignInForm onOpenSignUp={handleOpenSignUp} />
         </Modal.Content>
       </Modal.Root>
-      <Modal.Root>
+
+      <Modal.Root onOpenChange={setOpenSignUp} open={openSignUp}>
         <Modal.Trigger asChild>
           <Button text="Sign up" sizeWidth="small" />
         </Modal.Trigger>
         <Modal.Content>
-          <SignUpForm />
+          <SignUpForm onOpenSignIn={handleOpenSignIn} />
         </Modal.Content>
       </Modal.Root>
     </SignSectionComponent>

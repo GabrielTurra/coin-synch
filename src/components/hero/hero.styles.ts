@@ -15,6 +15,10 @@ export const HeroComponent = styled("div", {
   "@lg": {
     marginTop: 0,
   },
+
+  ".next-slider, .prev-slider": {
+    visibility: "hidden",
+  },
 });
 
 export const CustomSwiperSlide = styled(SwiperSlide, {

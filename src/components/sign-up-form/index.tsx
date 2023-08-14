@@ -9,7 +9,6 @@ import { AxiosError } from "axios";
 
 // Internal dependencies
 import { Modal, Button, TextInput } from "../lib";
-import { SignInForm } from "../sign-in-form";
 import { Checkbox } from "../lib/checkbox";
 import { api } from "@/src/lib/axios";
 
@@ -19,7 +18,12 @@ import MailIcon from "@/public/icons/mail.svg";
 import UserIcon from "@/public/icons/user.svg";
 
 // Styles
-import { ErrorMessage, SignUpFormComponent, Title } from "./SignUpForm.styles";
+import {
+  ChangeForm,
+  ErrorMessage,
+  SignUpFormComponent,
+  Title,
+} from "./SignUpForm.styles";
 
 const signUpFormSchema = z
   .object({
@@ -49,7 +53,7 @@ const signUpFormSchema = z
 
 type SignUpFormSchema = z.infer<typeof signUpFormSchema>;
 
-export const SignUpForm: React.FC<SignUpFormProps> = () => {
+export const SignUpForm: React.FC<SignUpFormProps> = ({ onOpenSignIn }) => {
   const [globalFormErros, setGlobalFormErros] = useState("");
 
   const {
@@ -153,20 +157,12 @@ export const SignUpForm: React.FC<SignUpFormProps> = () => {
       </fieldset>
 
       <Button text="Sign up" sizeWidth="full" disabled={isSubmitting} />
-
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <p>
-            Already have an account?{" "}
-            <strong>
-              Sign up to <span>Coin</span>Synch
-            </strong>
-          </p>
-        </Modal.Trigger>
-        <Modal.Content>
-          <SignInForm />
-        </Modal.Content>
-      </Modal.Root>
+      <ChangeForm>
+        Already have an account?{" "}
+        <Modal.Close onClick={onOpenSignIn}>
+          Sign in to <span>Coin</span>Synch
+        </Modal.Close>
+      </ChangeForm>
     </SignUpFormComponent>
   );
 };

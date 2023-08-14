@@ -1,1 +1,3 @@
-export interface SignInFormProps {}
+export interface SignInFormProps {
+  onOpenSignUp: () => void;
+}

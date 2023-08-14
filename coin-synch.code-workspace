@@ -12,7 +12,9 @@
 			// Code linting
 			"dbaeumer.vscode-eslint",
 			// .env syntax support
-			"mikestead.dotenv"
+			"mikestead.dotenv",
+			// support prisma schemas
+			"Prisma.prisma"
 		]
 	},
 	"settings": {

@@ -30,3 +30,4 @@ Content.displayName = "DialogContent";
 export const Root = DialogPrimitive.Root;
 export const Trigger = DialogPrimitive.Trigger;
 export const Title = DialogPrimitive.Title;
+export const Close = DialogPrimitive.Close;

@@ -7,7 +7,7 @@ export const formatCoins = (rawCoins: any): CoinProps[] => {
       name: coinInfo.name,
       acronym: coinInfo.symbol,
       price_usd: coinInfo.quote.USD.price,
-      variation: String(coinInfo.quote.USD.percent_change_24h.toFixed(2)),
+      variation: coinInfo.quote.USD.percent_change_24h,
     } as CoinProps;
     return coin;
   });

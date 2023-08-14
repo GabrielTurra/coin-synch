@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardsList,
   CardsSectionComponent,
@@ -19,6 +19,7 @@ import CryptoImage from "@/public/icons/crypto.svg";
 import PcImage from "@/public/icons/computer.svg";
 import { CardProps } from "../card/Card.types";
 import { SignUpForm } from "../sign-up-form";
+import { SignInForm } from "../sign-in-form";
 
 const mockedCards = [
   {
@@ -52,6 +53,17 @@ const mockedCards = [
 ] as CardProps[];
 
 export const CardsSection: React.FC<CardsSectionProps> = () => {
+  const [openSignUp, setOpenSignUp] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
+
+  function handleOpenSignUp() {
+    setOpenSignUp(true);
+  }
+
+  function handleOpenSignIn() {
+    setOpenSignIn(true);
+  }
+
   return (
     <CardsSectionComponent>
       <SectionContainer>
@@ -83,12 +95,19 @@ export const CardsSection: React.FC<CardsSectionProps> = () => {
               aliquam, purus sit amet luctus venenatis, lectus magna fringilla
               urna, porttitor{" "}
             </Description>
-            <Modal.Root>
+
+            <Modal.Root onOpenChange={setOpenSignIn} open={openSignIn}>
+              <Modal.Content>
+                <SignInForm onOpenSignUp={handleOpenSignUp} />
+              </Modal.Content>
+            </Modal.Root>
+
+            <Modal.Root onOpenChange={setOpenSignUp} open={openSignUp}>
               <Modal.Trigger asChild>
                 <Button text="Sign up now" />
               </Modal.Trigger>
               <Modal.Content>
-                <SignUpForm />
+                <SignUpForm onOpenSignIn={handleOpenSignIn} />
               </Modal.Content>
             </Modal.Root>
           </Col>

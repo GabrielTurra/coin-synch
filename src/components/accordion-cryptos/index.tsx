@@ -13,6 +13,7 @@ import Image from "next/image";
 import ChevronDown from "@/public/icons/chevron-down.svg";
 import { Container } from "@/src/styles/grid";
 import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
+import { formatPercentage } from "@/src/utils/formatPercentage";
 
 export const AccordionCryptos: React.FC<AccordionCryptosProps> = ({
   coins,
@@ -47,9 +48,13 @@ export const AccordionCryptos: React.FC<AccordionCryptosProps> = ({
                   <ContentItem>
                     <p>Change</p>
                     {Number(coin.variation) > 0 ? (
-                      <span className="positive">+{coin.variation}%</span>
+                      <span className="positive">
+                        {formatPercentage(coin.variation)}
+                      </span>
                     ) : (
-                      <span className="negative">{coin.variation}%</span>
+                      <span className="negative">
+                        {formatPercentage(coin.variation)}
+                      </span>
                     )}
                   </ContentItem>
                 </Container>

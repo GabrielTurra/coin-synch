@@ -9,14 +9,18 @@ import { useRouter } from "next/navigation";
 
 // Internal dependencies
 import { SignInFormProps } from "./SignInForm.types";
-import { SignUpForm } from "../sign-up-form";
 
 // Images
 import LockIcon from "@/public/icons/lock.svg";
 import MailIcon from "@/public/icons/mail.svg";
 
 // Styles
-import { ErrorMessage, SignInFormComponent, Title } from "./SignInForm.styles";
+import {
+  ChangeForm,
+  ErrorMessage,
+  SignInFormComponent,
+  Title,
+} from "./SignInForm.styles";
 
 const signInFormSchema = z.object({
   email: z
@@ -30,7 +34,7 @@ const signInFormSchema = z.object({
 
 type SignInFormSchema = z.infer<typeof signInFormSchema>;
 
-export const SignInForm: React.FC<SignInFormProps> = () => {
+export const SignInForm: React.FC<SignInFormProps> = ({ onOpenSignUp }) => {
   const [globalFormErros, setGlobalFormErros] = useState("");
   const router = useRouter();
 
@@ -42,7 +46,6 @@ export const SignInForm: React.FC<SignInFormProps> = () => {
   } = useForm<SignInFormSchema>({
     resolver: zodResolver(signInFormSchema),
   });
-
   async function handleSignIn(data: SignInFormSchema) {
     try {
       const status = await signIn("credentials", {
@@ -95,19 +98,12 @@ export const SignInForm: React.FC<SignInFormProps> = () => {
         <Button text="Sign in" sizeWidth="full" />
       </fieldset>
 
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <p>
-            Don’t have an account?{" "}
-            <strong>
-              Sign up to <span>Coin</span>Synch
-            </strong>
-          </p>
-        </Modal.Trigger>
-        <Modal.Content>
-          <SignUpForm />
-        </Modal.Content>
-      </Modal.Root>
+      <ChangeForm>
+        Don’t have an account?{" "}
+        <Modal.Close onClick={onOpenSignUp}>
+          Sign up to <span>Coin</span>Synch
+        </Modal.Close>
+      </ChangeForm>
     </SignInFormComponent>
   );
 };

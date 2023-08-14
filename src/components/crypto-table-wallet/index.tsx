@@ -10,6 +10,7 @@ import { convertToDolarFormat } from "@/src/utils/convertToDolarFormat";
 import { Modal, Tooltip } from "@/src/components/lib";
 import { TransferForm } from "../transfer-form";
 import { CoinProps } from "@/src/@types/Coins";
+import { formatPercentage } from "@/src/utils/formatPercentage";
 
 export const CryptosTableWallet: React.FC<CryptosTableWalletProps> = ({
   walletData,
@@ -70,10 +71,14 @@ export const CryptosTableWallet: React.FC<CryptosTableWalletProps> = ({
                   </span>
                 </HoldingContent>
               </td>
-              {Number(walletItem.coin?.variation) > 0 ? (
-                <td className="positive">+{walletItem.coin?.variation}%</td>
+              {walletItem.coin?.variation > 0 ? (
+                <td className="positive">
+                  {formatPercentage(walletItem.coin?.variation)}
+                </td>
               ) : (
-                <td className="negative">{walletItem.coin?.variation}%</td>
+                <td className="negative">
+                  {formatPercentage(walletItem.coin?.variation)}
+                </td>
               )}
               <td>
                 <Tooltip.Provider>

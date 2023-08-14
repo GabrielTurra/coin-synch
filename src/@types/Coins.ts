@@ -3,6 +3,6 @@ export interface CoinProps {
   acronym: string;
   name: string;
   price_usd: number;
-  variation: string;
+  variation: number;
   image?: string;
 }

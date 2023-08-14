@@ -27,12 +27,12 @@ export const SignUpFormComponent = styled("form", {
     textAlign: "center",
     marginTop: "$4",
 
-    strong: {
+    button: {
       cursor: "pointer",
     },
   },
 
-  strong: {
+  button: {
     span: {
       color: "$primary",
     },
@@ -42,6 +42,38 @@ export const SignUpFormComponent = styled("form", {
 export const Title = styled("h4", {
   fontWeight: "$regular",
   textAlign: "center",
+
+  strong: {
+    span: {
+      color: "$primary",
+    },
+  },
+});
+
+export const ChangeForm = styled("p", {
+  textAlign: "center",
+  marginTop: "$4",
+  fontSize: "$sm",
+  color: "$gray500",
+
+  span: {
+    color: "$primary",
+  },
+
+  button: {
+    borderRadius: "$md",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    color: "$textBase",
+    fontWeight: "$bold",
+    transition: "all 0.2s ease",
+    padding: "$2 5px",
+
+    "&:hover": {
+      background: "$orange100",
+    },
+  },
 });
 
 export const ErrorMessage = styled("p", {
