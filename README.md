@@ -2,7 +2,18 @@
 
 <p>📌 O CoinSynch foi desenvolvido como um teste técnico para uma entrevista de emprego e tem como objetivo criar uma plataforma de criptomoedas. Cada usuário terá acesso as informações da sua carteira onde poderá comprar e vender cryptos.<p>
 
-## 📐 Tecnologias
+A lista de requisitos está lista em outro arquivo chamado `requisitos.md` com os checks em tudo que foi realizado na aplicação.
+
+Meu objetivo foi construir uma aplicação com código limpo e bem estruturado que atendesse a todos os requisitos solicitados.
+
+O projeto realiza um cadastro direto no banco de dados utilizando as `APIs Routes` do próprio Next e através do Prisma todos os dados são persistidos em um banco PostgresSQL.
+
+A autenticação foi feita utilizando NextAuth, o usuário é salvo no banco e persistido ao longo da aplicação pelo próprio NextAuth através de cookies e um `Token JWT`.
+
+A estilização da aplicação foi feita com Stiches e RadixUI.
+Configurei toda a base do `style guide` disponibilizado no Figma com tokens dentro do projeto e repassei isso para a biblioteca criando um tema para a aplicação de facil manutenção e bem centralizado. Uma alteração nos tokens é capaz de alterar todos os estlos globais da aplicação conforme necessário.
+
+## 📐 Principais Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 - [Next.JS](https://nextjs.org/)
@@ -12,6 +23,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Docker](https://www.docker.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Stitches](https://stitches.dev/)
+- [RadixUI](https://www.radix-ui.com/)
 - [CoinMarketCap](https://coinmarketcap.com/api/)
 
 ## 🖌️ Layout
