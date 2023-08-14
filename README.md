@@ -6,6 +6,7 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 - [Next.JS](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [NextAuth](https://next-auth.js.org/)
 - [PrismaORM](https://www.prisma.io/)
 - [Docker](https://www.docker.com/)
