@@ -22,7 +22,6 @@ export const ButtonComponent = styled("button", {
 
   background: "$primary",
   boxSizing: "border-box",
-  color: "$white",
   padding: "$3 $6",
   borderRadius: "$xl",
   cursor: "pointer",
@@ -34,6 +33,7 @@ export const ButtonComponent = styled("button", {
 
   span: {
     marginLeft: "0 !important",
+    color: "$white !important",
   },
 
   "&:hover": {

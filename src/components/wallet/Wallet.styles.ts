@@ -13,10 +13,10 @@ export const WalletComponent = styled("div", {
 export const WalletHeader = styled(Row, {
   justifyContent: "space-between",
   borderBottom: "1px solid $gray100",
-  padding: "$4 $6",
+  padding: "$8 0 $2",
   boxSizing: "border-box",
 
-  "@xs": {
+  "@md": {
     padding: "$8",
   },
 

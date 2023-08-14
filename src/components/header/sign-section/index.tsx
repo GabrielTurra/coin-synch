@@ -6,6 +6,7 @@ import { signOut, useSession } from "next-auth/react";
 
 import Image from "next/image";
 import ChevronDown from "@/public/icons/chevron-down-small.svg";
+import LogoutIcon from "@/public/icons/logout.svg";
 
 import { SignSectionProps } from "../Header.types";
 
@@ -34,7 +35,12 @@ export const SignSection: React.FC<SignSectionProps> = () => {
             alt=""
           />
           <ListMenu>
-            <li onClick={() => signOut()}>Logout</li>
+            <li onClick={() => signOut()}>
+              <div>
+                <Image src={LogoutIcon.src} width={16} height={16} alt="" />
+                Logout
+              </div>
+            </li>
           </ListMenu>
         </UserComponent>
       </SignSectionLogged>

@@ -41,5 +41,3 @@
 [X] Caso usuário transfira todo o valor da moeda selecionada, o item deverá ser removido da listagem do bloco "My Wallet";
 [X] O campo "Quantity" não deverá ter valor negativo;
 [X] Ao remover todas as moedas da sua carteira, deverá ser exibida a mensagem de "Empty data" no bloco "My Wallet".
-
-[ ] colocar icone de logout

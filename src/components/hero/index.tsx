@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   CustomSwiperSlide,
   Description,
@@ -13,7 +13,7 @@ import {
 import { HeroProps } from "./Hero.types";
 import { Button, Modal } from "../lib";
 import { Col } from "@/src/styles/grid";
-import { A11y } from "swiper/modules";
+import { A11y, Mousewheel } from "swiper/modules";
 import { Swiper } from "swiper/react";
 
 import RightArrowIcon from "@/public/icons/right-arrow.svg";
@@ -70,9 +70,12 @@ export const Hero: React.FC<HeroProps> = () => {
             }}
           >
             <Swiper
-              modules={[A11y]}
+              modules={[A11y, Mousewheel]}
+              mousewheel={true}
               spaceBetween={50}
               slidesPerView={1.4}
+              loop={true}
+              freeMode={true}
               breakpoints={{
                 768: {
                   spaceBetween: 70,

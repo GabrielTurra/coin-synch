@@ -76,6 +76,10 @@ export const CoinCardBody = styled("div", {
     fontSize: "$sm",
     color: "$red500",
   },
+
+  button: {
+    marginTop: "$2",
+  },
 });
 
 export const Separator = styled("div", {

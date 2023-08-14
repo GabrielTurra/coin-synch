@@ -114,6 +114,16 @@ export const ListMenu = styled("ul", {
     "&:hover": {
       background: "$gray100",
     },
+
+    "> div": {
+      display: "flex",
+      alignItems: "center",
+    },
+  },
+
+  img: {
+    borderRadius: "0 !important",
+    marginRight: "5px",
   },
 });
 
