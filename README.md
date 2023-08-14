@@ -42,7 +42,7 @@ O primeiro passo é baixar a aplicação na sua máquina.
 
 - Para isso dentro da pasta de destino onde você deseja baixar o projeto, digite o seguinte comando no seu terminal:
 ```bash
-$ git clone https://github.com/GabrielTurra/coin-synch.git
+git clone https://github.com/GabrielTurra/coin-synch.git
 ```
 ### 🪙 Criar uma chave de API para consumir as criptomoedas
 
@@ -66,7 +66,7 @@ Esta aplicação possui uma configuração do `Docker Compose` que dita pro Dock
 - Para criar o banco de dados basta apenas abrir seu terminal dentro da pasta raiz do projeto e digitar o seguinte comando:
 
 ```bash
-$ docker compose up
+docker compose up
 ```
 
 Este comando irá consumsir o arquivo `docker-compose.yml` presente na raiz do projeto e gerar a instância automaticamente baseado nas configurações disponíveis lá.
@@ -77,7 +77,7 @@ Este comando irá consumsir o arquivo `docker-compose.yml` presente na raiz do p
 ```bash
 # caso tenha mudado algo na instalação ou nas portas do seu Docker, você vai precisar configurar essa variável para o seu banco de dados local
 
-$ DATABASE_URL="postgresql://docker:docker@localhost:5432/coinsynch?schema=public"
+DATABASE_URL="postgresql://docker:docker@localhost:5432/coinsynch?schema=public"
 ```
 
 ### 🤖 Configurando uma chave para o NextAuth JWT
@@ -108,7 +108,7 @@ Minha sugestão é abrir o projeto através do arquivo de workspace configurado 
 Aqui vamos seguir com o gerenciador de pacotes `npm`.
 - Dentro da pasta raiz do projeto, digite o seguinte comando:
 ```bash
-$ npm install
+npm install
 ```
 
 ### 🛸 Subir as migrations do Prisma
@@ -117,12 +117,12 @@ Anteriormente subimos um container com PostgresSQL no Docker, mas esse ainda se 
 
 - Dentro da pasta raiz do projeto, digite o seguinte comando:
 ```bash
-$ npx prisma migrate dev
+npx prisma migrate dev
 ```
 
 Como uma forma de visualizar esse resultado, o `Prisma` nos oferece uma interface que pode ser rodada executando o seguinte comando no terminal
 ```bash
-$ npx prisma studio
+npx prisma studio
 ```
 
 #### Se tudo correu bem, você deve visualizar na janela que abriu no sseu navegador as 3 tabelas do projeto no banco (`Newsletters`, `Users` e `Transactions`). 
@@ -132,11 +132,11 @@ $ npx prisma studio
 
 Agora com todos as configurações feitas, basta entrar na raiz do projeto e digitar o comando
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 Se tudo correu bem, o projeto deve iniciar na sua máquina e você pode acessá-lo por um link semelhante a esse que vai aparecer no seu terminal 
 ```bash
-$ ready started server on 0.0.0.0:3000, url: http://localhost:3000
+ready started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
 
