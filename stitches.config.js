@@ -1,5 +1,14 @@
 import { createStitches, defaultThemeMap } from "@stitches/react";
-import { colors, fonts, fontSizes, fontWeights, radii, space, breakpoints, utils } from "@/src/styles/tokens";
+import {
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  radii,
+  space,
+  breakpoints,
+  utils,
+} from "@/src/styles/tokens";
 
 export const {
   styled,
@@ -30,7 +39,7 @@ export const {
     fontSizes,
     fontWeights,
     radii,
-    space
+    space,
   },
   media: breakpoints,
   utils,
